@@ -1,0 +1,162 @@
+{
+  "lastUpdated": "2026-08-28T12:40:49.400Z",
+  "nextUpdate": "2026-08-28T16:40:49.401Z",
+  "topics": [
+    {
+      "title": "AI Revolution & ChatGPT Updates",
+      "description": "Latest AI developments and generative AI breakthroughs dominating Indian tech space",
+      "category": "Technology",
+      "videoCount": 139096,
+      "growthRate": 78,
+      "trending": "hot",
+      "keywords": [
+        "AI",
+        "ChatGPT",
+        "Technology",
+        "Innovation"
+      ],
+      "lastUpdated": "2026-08-28T12:40:49.400Z"
+    },
+    {
+      "title": "Cricket World Cup 2026",
+      "description": "ICC Cricket World Cup coverage, match highlights, and player performances",
+      "category": "Sports",
+      "videoCount": 101336,
+      "growthRate": 76,
+      "trending": "hot",
+      "keywords": [
+        "Cricket",
+        "World Cup",
+        "Sports",
+        "ICC"
+      ],
+      "lastUpdated": "2026-08-28T12:40:49.400Z"
+    },
+    {
+      "title": "Budget Smartphone Reviews 2026",
+      "description": "Latest affordable smartphones under ₹20,000 with detailed reviews",
+      "category": "Technology",
+      "videoCount": 89661,
+      "growthRate": 67,
+      "trending": "rising",
+      "keywords": [
+        "Smartphone",
+        "Tech Review",
+        "Budget",
+        "Mobile"
+      ],
+      "lastUpdated": "2026-08-28T12:40:49.400Z"
+    },
+    {
+      "title": "Stock Market & Investment Tips",
+      "description": "Share market analysis, mutual funds, and investment strategies for 2026",
+      "category": "Business",
+      "videoCount": 64739,
+      "growthRate": 58,
+      "trending": "rising",
+      "keywords": [
+        "Stock Market",
+        "Investment",
+        "Finance",
+        "Trading"
+      ],
+      "lastUpdated": "2026-08-28T12:40:49.400Z"
+    },
+    {
+      "title": "Bollywood Movies & Web Series",
+      "description": "Latest Bollywood releases, OTT content, and entertainment news",
+      "category": "Entertainment",
+      "videoCount": 105103,
+      "growthRate": 55,
+      "trending": "rising",
+      "keywords": [
+        "Bollywood",
+        "Movies",
+        "Web Series",
+        "Entertainment"
+      ],
+      "lastUpdated": "2026-08-28T12:40:49.400Z"
+    },
+    {
+      "title": "Fitness & Workout Routines",
+      "description": "Home workouts, gym training, yoga, and fitness transformation stories",
+      "category": "Health",
+      "videoCount": 82924,
+      "growthRate": 54,
+      "trending": "steady",
+      "keywords": [
+        "Fitness",
+        "Workout",
+        "Gym",
+        "Health"
+      ],
+      "lastUpdated": "2026-08-28T12:40:49.400Z"
+    },
+    {
+      "title": "Indian Cooking & Recipes",
+      "description": "Traditional and modern Indian recipes, cooking tips, and food vlogs",
+      "category": "Food",
+      "videoCount": 119363,
+      "growthRate": 51,
+      "trending": "steady",
+      "keywords": [
+        "Cooking",
+        "Recipe",
+        "Indian Food",
+        "Cuisine"
+      ],
+      "lastUpdated": "2026-08-28T12:40:49.400Z"
+    },
+    {
+      "title": "Government Schemes & Jobs 2026",
+      "description": "Latest government job notifications, exam preparation, and welfare schemes",
+      "category": "Education",
+      "videoCount": 92189,
+      "growthRate": 50,
+      "trending": "steady",
+      "keywords": [
+        "Government Jobs",
+        "Exams",
+        "Education",
+        "Schemes"
+      ],
+      "lastUpdated": "2026-08-28T12:40:49.400Z"
+    },
+    {
+      "title": "Electric Vehicles & Auto Reviews",
+      "description": "EV launches, car reviews, and automotive industry news in India",
+      "category": "Technology",
+      "videoCount": 62695,
+      "growthRate": 46,
+      "trending": "steady",
+      "keywords": [
+        "Electric Vehicle",
+        "Car",
+        "Auto",
+        "Review"
+      ],
+      "lastUpdated": "2026-08-28T12:40:49.400Z"
+    },
+    {
+      "title": "Travel Vlogs & Tourism",
+      "description": "India travel guides, destination reviews, and travel tips",
+      "category": "Travel",
+      "videoCount": 75914,
+      "growthRate": 39,
+      "trending": "steady",
+      "keywords": [
+        "Travel",
+        "Tourism",
+        "Vlog",
+        "India"
+      ],
+      "lastUpdated": "2026-08-28T12:40:49.400Z"
+    }
+  ],
+  "metadata": {
+    "totalTopics": 10,
+    "country": "India",
+    "updateFrequency": "Every 4 hours",
+    "source": "Simulated data (replace with real API)"
+  }
+}

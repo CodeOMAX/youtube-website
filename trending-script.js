@@ -1,525 +1,444 @@
-// ===================================
-// Trending Topics Data
-// ===================================
-const trendingTopicsData = [
-    {
-        rank: 1,
-        title: "AI Revolution & ChatGPT Alternatives",
-        description: "Latest AI tools, automation, and generative AI breakthroughs dominating Indian tech space",
-        category: "Technology",
-        videoCount: 125000,
-        views: "450M+",
-        growth: "+85%",
-        trend: "hot",
-        keywords: ["AI", "ChatGPT", "Machine Learning", "Automation"],
-        icon: "🤖"
-    },
-    {
-        rank: 2,
-        title: "Cricket World Cup 2026 Highlights",
-        description: "Match highlights, player performances, and cricket analysis capturing the nation",
-        category: "Sports",
-        videoCount: 98000,
-        views: "380M+",
-        growth: "+72%",
-        trend: "hot",
-        keywords: ["Cricket", "World Cup", "Sports", "India"],
-        icon: "🏏"
-    },
-    {
-        rank: 3,
-        title: "Budget Smartphone Reviews 2026",
-        description: "Latest affordable smartphones under ₹20,000 with detailed reviews and comparisons",
-        category: "Technology",
-        videoCount: 87000,
-        views: "320M+",
-        growth: "+68%",
-        trend: "hot",
-        keywords: ["Smartphone", "Tech Review", "Budget", "Mobile"],
-        icon: "📱"
-    },
-    {
-        rank: 4,
-        title: "Bollywood Movies & Web Series",
-        description: "New releases, trailers, reviews, and behind-the-scenes content from Indian entertainment",
-        category: "Entertainment",
-        videoCount: 156000,
-        views: "520M+",
-        growth: "+55%",
-        trend: "rising",
-        keywords: ["Bollywood", "Movies", "Web Series", "Entertainment"],
-        icon: "🎬"
-    },
-    {
-        rank: 5,
-        title: "Stock Market & Investment Tips",
-        description: "Financial advice, market analysis, and investment strategies for Indian investors",
-        category: "Education",
-        videoCount: 65000,
-        views: "280M+",
-        growth: "+63%",
-        trend: "rising",
-        keywords: ["Stock Market", "Investment", "Finance", "Money"],
-        icon: "📈"
-    },
-    {
-        rank: 6,
-        title: "Cooking & Indian Recipes",
-        description: "Traditional and modern Indian recipes, cooking hacks, and food vlogs",
-        category: "Lifestyle",
-        videoCount: 112000,
-        views: "395M+",
-        growth: "+48%",
-        trend: "rising",
-        keywords: ["Cooking", "Recipes", "Food", "Indian Cuisine"],
-        icon: "🍛"
-    },
-    {
-        rank: 7,
-        title: "Fitness & Workout Routines",
-        description: "Home workouts, gym routines, yoga, and health tips trending across India",
-        category: "Lifestyle",
-        videoCount: 78000,
-        views: "265M+",
-        growth: "+52%",
-        trend: "rising",
-        keywords: ["Fitness", "Workout", "Yoga", "Health"],
-        icon: "💪"
-    },
-    {
-        rank: 8,
-        title: "Government Schemes & Job Notifications",
-        description: "Latest government job openings, exam preparation, and welfare scheme updates",
-        category: "Education",
-        videoCount: 92000,
-        views: "310M+",
-        growth: "+44%",
-        trend: "steady",
-        keywords: ["Government Jobs", "Exam", "Education", "Career"],
-        icon: "📚"
-    },
-    {
-        rank: 9,
-        title: "Travel Vlogs & Budget Tourism",
-        description: "Travel guides, budget trips, and destination reviews from across India and abroad",
-        category: "Lifestyle",
-        videoCount: 71000,
-        views: "245M+",
-        growth: "+41%",
-        trend: "steady",
-        keywords: ["Travel", "Tourism", "Vlog", "Adventure"],
-        icon: "✈️"
-    },
-    {
-        rank: 10,
-        title: "Electric Vehicles & Auto Reviews",
-        description: "EV launches, car reviews, bike comparisons, and automobile industry news",
-        category: "Technology",
-        videoCount: 58000,
-        views: "215M+",
-        growth: "+38%",
-        trend: "steady",
-        keywords: ["Electric Vehicle", "Car Review", "Auto", "EV"],
-        icon: "🚗"
-    }
-];
+// ============================
+// DYNAMIC TRENDING TOPICS LOADER
+// Auto-updates every 4 hours via GitHub Actions
+// ============================
 
-// Category data for charts
-const categoryData = {
-    "Technology": 270000,
-    "Entertainment": 156000,
-    "Lifestyle": 261000,
-    "Sports": 98000,
-    "Education": 157000
+let trendingTopicsData = [];
+let lastUpdateTime = null;
+
+// Category icons mapping
+const categoryIcons = {
+    'Technology': '🤖',
+    'Sports': '🏏',
+    'Entertainment': '🎬',
+    'Business': '📈',
+    'Food': '🍛',
+    'Health': '💪',
+    'Education': '📚',
+    'Travel': '✈️',
+    'Gaming': '🎮',
+    'Music': '🎵',
+    'News': '📰'
 };
 
-// Growth trend data (last 7 days)
-const growthTrendData = [
-    { day: "Day 1", value: 1200 },
-    { day: "Day 2", value: 1850 },
-    { day: "Day 3", value: 2100 },
-    { day: "Day 4", value: 2700 },
-    { day: "Day 5", value: 3200 },
-    { day: "Day 6", value: 3800 },
-    { day: "Day 7", value: 4500 }
-];
+// Status badge mapping
+const getTrendStatus = (growthRate) => {
+    if (growthRate >= 70) return 'hot';
+    if (growthRate >= 50) return 'rising';
+    return 'steady';
+};
+
+// Load trending data from JSON file
+async function loadTrendingData() {
+    try {
+        const response = await fetch('trending-data.json');
+        if (!response.ok) {
+            throw new Error('Failed to load trending data');
+        }
+
+        const data = await response.json();
+        lastUpdateTime = new Date(data.lastUpdated);
+
+        // Transform data to match existing format
+        trendingTopicsData = data.topics.map((topic, index) => ({
+            rank: index + 1,
+            title: topic.title,
+            description: topic.description,
+            category: topic.category,
+            videoCount: topic.videoCount,
+            views: formatViews(topic.videoCount),
+            growth: `+${topic.growthRate}%`,
+            trend: getTrendStatus(topic.growthRate),
+            keywords: topic.keywords,
+            icon: categoryIcons[topic.category] || '📊'
+        }));
+
+        console.log('✅ Trending data loaded:', trendingTopicsData.length, 'topics');
+        updateLastUpdateTime();
+        return true;
+
+    } catch (error) {
+        console.error('❌ Error loading trending data:', error);
+        // Fallback to static data if fetch fails
+        loadFallbackData();
+        return false;
+    }
+}
+
+// Format video count to views
+function formatViews(count) {
+    if (count >= 1000000) {
+        return `${Math.floor(count / 1000000)}M+`;
+    } else if (count >= 1000) {
+        return `${Math.floor(count / 1000)}K+`;
+    }
+    return `${count}+`;
+}
+
+// Update last update timestamp
+function updateLastUpdateTime() {
+    const updateElement = document.getElementById('lastUpdate');
+    if (updateElement && lastUpdateTime) {
+        const timeAgo = getTimeAgo(lastUpdateTime);
+        updateElement.textContent = `Last updated: ${timeAgo}`;
+    }
+}
+
+// Calculate time ago
+function getTimeAgo(date) {
+    const seconds = Math.floor((new Date() - date) / 1000);
+
+    if (seconds < 60) return 'just now';
+    if (seconds < 3600) return `${Math.floor(seconds / 60)} minutes ago`;
+    if (seconds < 86400) return `${Math.floor(seconds / 3600)} hours ago`;
+    return `${Math.floor(seconds / 86400)} days ago`;
+}
+
+// Fallback data if JSON fails to load
+function loadFallbackData() {
+    console.log('⚠️ Using fallback static data');
+    trendingTopicsData = [
+        {
+            rank: 1,
+            title: "AI Revolution & ChatGPT Alternatives",
+            description: "Latest AI tools, automation, and generative AI breakthroughs dominating Indian tech space",
+            category: "Technology",
+            videoCount: 125000,
+            views: "450M+",
+            growth: "+85%",
+            trend: "hot",
+            keywords: ["AI", "ChatGPT", "Machine Learning", "Automation"],
+            icon: "🤖"
+        },
+        {
+            rank: 2,
+            title: "Cricket World Cup 2026 Highlights",
+            description: "Match highlights, player performances, and cricket analysis capturing the nation",
+            category: "Sports",
+            videoCount: 98000,
+            views: "380M+",
+            growth: "+72%",
+            trend: "hot",
+            keywords: ["Cricket", "World Cup", "Sports", "India"],
+            icon: "🏏"
+        },
+        {
+            rank: 3,
+            title: "Budget Smartphone Reviews 2026",
+            description: "Latest affordable smartphones under ₹20,000 with detailed reviews and comparisons",
+            category: "Technology",
+            videoCount: 87000,
+            views: "320M+",
+            growth: "+68%",
+            trend: "hot",
+            keywords: ["Smartphone", "Tech Review", "Budget", "Mobile"],
+            icon: "📱"
+        },
+        {
+            rank: 4,
+            title: "Bollywood Movies & Web Series",
+            description: "New releases, trailers, reviews, and behind-the-scenes content from Indian entertainment",
+            category: "Entertainment",
+            videoCount: 156000,
+            views: "520M+",
+            growth: "+55%",
+            trend: "rising",
+            keywords: ["Bollywood", "Movies", "Web Series", "Entertainment"],
+            icon: "🎬"
+        },
+        {
+            rank: 5,
+            title: "Stock Market & Investment Tips",
+            description: "Share market analysis, mutual funds, and investment strategies for Indian investors",
+            category: "Business",
+            videoCount: 65000,
+            views: "240M+",
+            growth: "+63%",
+            trend: "rising",
+            keywords: ["Stock Market", "Investment", "Finance", "Trading"],
+            icon: "📈"
+        },
+        {
+            rank: 6,
+            title: "Indian Cooking & Traditional Recipes",
+            description: "Authentic Indian dishes, street food, and cooking tutorials trending across platforms",
+            category: "Food",
+            videoCount: 112000,
+            views: "410M+",
+            growth: "+48%",
+            trend: "steady",
+            keywords: ["Cooking", "Recipe", "Indian Food", "Cuisine"],
+            icon: "🍛"
+        },
+        {
+            rank: 7,
+            title: "Fitness & Workout Routines",
+            description: "Home workouts, gym training, yoga, and fitness transformation stories",
+            category: "Health",
+            videoCount: 78000,
+            views: "290M+",
+            growth: "+52%",
+            trend: "steady",
+            keywords: ["Fitness", "Workout", "Gym", "Health"],
+            icon: "💪"
+        },
+        {
+            rank: 8,
+            title: "Government Schemes & Job Exams",
+            description: "Latest government job notifications, exam preparation, and welfare scheme updates",
+            category: "Education",
+            videoCount: 92000,
+            views: "335M+",
+            growth: "+47%",
+            trend: "steady",
+            keywords: ["Government Jobs", "Exams", "Education", "Schemes"],
+            icon: "📚"
+        },
+        {
+            rank: 9,
+            title: "Travel Vlogs & Hidden Destinations",
+            description: "Exploring India's beauty - travel guides, budget trips, and adventure vlogs",
+            category: "Travel",
+            videoCount: 71000,
+            views: "265M+",
+            growth: "+41%",
+            trend: "steady",
+            keywords: ["Travel", "Tourism", "Vlog", "India"],
+            icon: "✈️"
+        },
+        {
+            rank: 10,
+            title: "Electric Vehicles & Auto Industry",
+            description: "EV launches, car reviews, and automotive industry updates shaping India's future",
+            category: "Technology",
+            videoCount: 58000,
+            views: "215M+",
+            growth: "+45%",
+            trend: "steady",
+            keywords: ["Electric Vehicle", "Car", "Auto", "Review"],
+            icon: "🚗"
+        }
+    ];
+    lastUpdateTime = new Date();
+}
+
+// Rest of your existing code continues here...
+// (All the rendering functions, filters, charts etc.)
 
 // ===================================
-// Initialize Trending Page
+// Render Trending Topics
 // ===================================
+const trendingGrid = document.getElementById('trendingGrid');
 let currentFilter = 'all';
 let currentSort = 'trending';
 
-document.addEventListener('DOMContentLoaded', () => {
-    initializeTrendingPage();
-    updateLastUpdateTime();
-    setupEventListeners();
-    renderTrendingList(trendingTopicsData);
-    renderCharts();
+function renderTrendingTopics(topics = trendingTopicsData) {
+    if (!trendingGrid) return;
 
-    console.log('🔥 Trending page loaded successfully!');
-});
-
-function initializeTrendingPage() {
-    // Add fade-in animations
-    const heroContent = document.querySelector('.trending-hero-content');
-    if (heroContent) heroContent.classList.add('fade-in');
-}
-
-// ===================================
-// Update Last Update Time
-// ===================================
-function updateLastUpdateTime() {
-    const lastUpdateElement = document.getElementById('lastUpdate');
-    if (lastUpdateElement) {
-        const now = new Date();
-        const timeString = now.toLocaleTimeString('en-IN', {
-            hour: '2-digit',
-            minute: '2-digit',
-            hour12: true
-        });
-        const dateString = now.toLocaleDateString('en-IN', {
-            day: 'numeric',
-            month: 'short',
-            year: 'numeric'
-        });
-        lastUpdateElement.textContent = `${dateString} at ${timeString}`;
-    }
-}
-
-// ===================================
-// Event Listeners
-// ===================================
-function setupEventListeners() {
-    // Category filter
-    const categoryFilter = document.getElementById('categoryFilter');
-    if (categoryFilter) {
-        categoryFilter.addEventListener('change', (e) => {
-            currentFilter = e.target.value;
-            filterAndRenderTopics();
-        });
-    }
-
-    // Sort by
-    const sortBy = document.getElementById('sortBy');
-    if (sortBy) {
-        sortBy.addEventListener('change', (e) => {
-            currentSort = e.target.value;
-            filterAndRenderTopics();
-        });
-    }
-
-    // Refresh button
-    const refreshBtn = document.getElementById('refreshBtn');
-    if (refreshBtn) {
-        refreshBtn.addEventListener('click', () => {
-            refreshData();
-        });
-    }
-}
-
-// ===================================
-// Filter and Sort Topics
-// ===================================
-function filterAndRenderTopics() {
-    let filteredData = [...trendingTopicsData];
-
-    // Apply category filter
-    if (currentFilter !== 'all') {
-        filteredData = filteredData.filter(topic =>
-            topic.category.toLowerCase() === currentFilter.toLowerCase()
-        );
-    }
-
-    // Apply sorting
-    if (currentSort === 'growth') {
-        filteredData.sort((a, b) => {
-            const growthA = parseInt(a.growth.replace(/[+%]/g, ''));
-            const growthB = parseInt(b.growth.replace(/[+%]/g, ''));
-            return growthB - growthA;
-        });
-    } else if (currentSort === 'videos') {
-        filteredData.sort((a, b) => b.videoCount - a.videoCount);
-    }
-
-    renderTrendingList(filteredData);
-}
-
-// ===================================
-// Render Trending List
-// ===================================
-function renderTrendingList(data) {
-    const trendingList = document.getElementById('trendingList');
-    if (!trendingList) return;
-
-    if (data.length === 0) {
-        trendingList.innerHTML = `
-            <div class="empty-state">
-                <div class="empty-state-icon">🔍</div>
-                <h3 class="empty-state-title">No Topics Found</h3>
-                <p class="empty-state-description">Try adjusting your filters to see more results</p>
+    trendingGrid.innerHTML = topics.map(topic => `
+        <div class="trending-card" data-category="${topic.category.toLowerCase()}" data-trend="${topic.trend}">
+            <div class="trending-rank">
+                <span class="rank-number">#${topic.rank}</span>
+                <span class="trend-badge ${topic.trend}">${getTrendBadge(topic.trend)}</span>
             </div>
-        `;
-        return;
-    }
-
-    trendingList.innerHTML = data.map((topic, index) => `
-        <div class="trending-item fade-in-up stagger-${(index % 10) + 1}">
-            <div class="trending-rank ${topic.trend === 'hot' ? 'hot' : ''}">
-                ${topic.rank}
-            </div>
-            <div class="trending-content">
-                <div class="trending-header">
-                    <h3 class="trending-title">
-                        ${topic.icon} ${topic.title}
-                    </h3>
-                    <span class="trending-badge ${topic.trend}">${topic.trend.toUpperCase()}</span>
-                    <span class="category-tag">${topic.category}</span>
-                </div>
-                <p class="trending-description">${topic.description}</p>
-                <div class="trending-meta">
-                    <div class="meta-item">
+            <div class="trending-icon">${topic.icon}</div>
+            <h3 class="trending-title">${topic.title}</h3>
+            <p class="trending-description">${topic.description}</p>
+            <div class="trending-meta">
+                <span class="category-tag ${topic.category.toLowerCase()}">${topic.category}</span>
+                <div class="trending-stats">
+                    <span class="stat-item">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
                             <circle cx="12" cy="12" r="3"></circle>
                         </svg>
-                        ${topic.views} views
-                    </div>
-                    <div class="meta-item">
+                        ${topic.views}
+                    </span>
+                    <span class="stat-item">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                            <line x1="16" y1="2" x2="16" y2="6"></line>
-                            <line x1="8" y1="2" x2="8" y2="6"></line>
-                            <line x1="3" y1="10" x2="21" y2="10"></line>
+                            <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline>
+                            <polyline points="16 7 22 7 22 13"></polyline>
                         </svg>
-                        Last 24 hours
-                    </div>
+                        ${topic.growth}
+                    </span>
+                    <span class="stat-item">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="17 8 12 3 7 8"></polyline>
+                            <line x1="12" y1="3" x2="12" y2="15"></line>
+                        </svg>
+                        ${formatNumber(topic.videoCount)}
+                    </span>
                 </div>
             </div>
-            <div class="trending-stats">
-                <div>
-                    <div class="video-count">${formatNumber(topic.videoCount)}</div>
-                    <div class="video-label">Total Videos</div>
-                </div>
-                <div class="growth-indicator positive">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <polyline points="18 15 12 9 6 15"></polyline>
-                    </svg>
-                    ${topic.growth}
-                </div>
+            <div class="trending-keywords">
+                ${topic.keywords.map(kw => `<span class="keyword-tag">${kw}</span>`).join('')}
             </div>
         </div>
     `).join('');
 
-    // Update stats
-    updateStatCards(data);
+    // Add stagger animation
+    const cards = document.querySelectorAll('.trending-card');
+    cards.forEach((card, index) => {
+        card.style.animationDelay = `${index * 0.05}s`;
+    });
+}
+
+function getTrendBadge(trend) {
+    const badges = {
+        hot: '🔥 Hot',
+        rising: '📈 Rising',
+        steady: '📊 Steady'
+    };
+    return badges[trend] || '📊 Steady';
+}
+
+function formatNumber(num) {
+    if (num >= 1000000) return `${(num / 1000000).toFixed(1)}M`;
+    if (num >= 1000) return `${(num / 1000).toFixed(1)}K`;
+    return num.toString();
 }
 
 // ===================================
-// Update Stat Cards
+// Filter & Sort Functions
 // ===================================
-function updateStatCards(data) {
-    const totalVideos = data.reduce((sum, topic) => sum + topic.videoCount, 0);
-    const hotTopics = data.filter(topic => topic.trend === 'hot').length;
-    const avgGrowth = Math.round(
-        data.reduce((sum, topic) => sum + parseInt(topic.growth.replace(/[+%]/g, '')), 0) / data.length
-    );
+function filterTopics(category) {
+    currentFilter = category;
+    let filteredTopics = trendingTopicsData;
 
-    document.getElementById('totalTopics').textContent = data.length;
-    document.getElementById('hotTopics').textContent = hotTopics;
-    document.getElementById('avgGrowth').textContent = `+${avgGrowth}%`;
+    if (category !== 'all') {
+        filteredTopics = trendingTopicsData.filter(topic =>
+            topic.category.toLowerCase() === category.toLowerCase()
+        );
+    }
+
+    applySorting(filteredTopics);
+    updateActiveFilter();
 }
 
-// ===================================
-// Render Charts
-// ===================================
-function renderCharts() {
-    renderCategoryChart();
-    renderGrowthChart();
+function sortTopics(sortBy) {
+    currentSort = sortBy;
+    let sortedTopics = [...trendingTopicsData];
+
+    if (currentFilter !== 'all') {
+        sortedTopics = sortedTopics.filter(topic =>
+            topic.category.toLowerCase() === currentFilter.toLowerCase()
+        );
+    }
+
+    applySorting(sortedTopics);
+    updateActiveSort();
 }
 
-function renderCategoryChart() {
-    const container = document.getElementById('categoryChart');
-    if (!container) return;
+function applySorting(topics) {
+    let sorted = [...topics];
 
-    const maxValue = Math.max(...Object.values(categoryData));
+    switch(currentSort) {
+        case 'growth':
+            sorted.sort((a, b) => parseInt(b.growth) - parseInt(a.growth));
+            break;
+        case 'videos':
+            sorted.sort((a, b) => b.videoCount - a.videoCount);
+            break;
+        case 'trending':
+        default:
+            // Already sorted by rank
+            break;
+    }
 
-    const chartHTML = `
-        <div class="bar-chart">
-            ${Object.entries(categoryData).map(([category, value]) => {
-                const height = (value / maxValue) * 100;
-                return `
-                    <div class="bar-item">
-                        <div class="bar-value">${formatNumber(value)}</div>
-                        <div class="bar" style="height: ${height}%; background: ${getCategoryGradient(category)}"></div>
-                        <div class="bar-label">${category}</div>
-                    </div>
-                `;
-            }).join('')}
-        </div>
-    `;
-
-    container.innerHTML = chartHTML;
+    renderTrendingTopics(sorted);
 }
 
-function renderGrowthChart() {
-    const container = document.getElementById('growthChart');
-    if (!container) return;
+function updateActiveFilter() {
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.category === currentFilter);
+    });
+}
 
-    const maxValue = Math.max(...growthTrendData.map(d => d.value));
-    const width = 600;
-    const height = 300;
-    const padding = 40;
-
-    // Calculate points for the line
-    const points = growthTrendData.map((d, i) => {
-        const x = padding + (i * (width - 2 * padding) / (growthTrendData.length - 1));
-        const y = height - padding - ((d.value / maxValue) * (height - 2 * padding));
-        return `${x},${y}`;
-    }).join(' ');
-
-    // Create area path
-    const areaPoints = `${padding},${height - padding} ` + points + ` ${width - padding},${height - padding}`;
-
-    const chartHTML = `
-        <svg class="line-chart" viewBox="0 0 ${width} ${height}" preserveAspectRatio="xMidYMid meet">
-            <defs>
-                <linearGradient id="areaGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                    <stop offset="0%" style="stop-color:rgba(99, 102, 241, 0.3);stop-opacity:1" />
-                    <stop offset="100%" style="stop-color:rgba(99, 102, 241, 0);stop-opacity:1" />
-                </linearGradient>
-            </defs>
-
-            <!-- Grid lines -->
-            ${[0, 1, 2, 3, 4].map(i => {
-                const y = padding + (i * (height - 2 * padding) / 4);
-                return `<line x1="${padding}" y1="${y}" x2="${width - padding}" y2="${y}" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>`;
-            }).join('')}
-
-            <!-- Area -->
-            <polygon points="${areaPoints}" fill="url(#areaGradient)" />
-
-            <!-- Line -->
-            <polyline points="${points}" fill="none" stroke="#6366f1" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-
-            <!-- Data points -->
-            ${growthTrendData.map((d, i) => {
-                const x = padding + (i * (width - 2 * padding) / (growthTrendData.length - 1));
-                const y = height - padding - ((d.value / maxValue) * (height - 2 * padding));
-                return `
-                    <circle cx="${x}" cy="${y}" r="4" fill="#6366f1" stroke="#0a0a0f" stroke-width="2"/>
-                    <text x="${x}" y="${height - padding + 20}" text-anchor="middle" fill="#71717a" font-size="12">${d.day}</text>
-                `;
-            }).join('')}
-        </svg>
-    `;
-
-    container.innerHTML = chartHTML;
+function updateActiveSort() {
+    document.querySelectorAll('.sort-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.sort === currentSort);
+    });
 }
 
 // ===================================
 // Refresh Data
 // ===================================
-function refreshData() {
-    const refreshBtn = document.getElementById('refreshBtn');
-    const originalText = refreshBtn.innerHTML;
-
-    refreshBtn.innerHTML = '<div class="spinner" style="width: 16px; height: 16px; border-width: 2px;"></div> Refreshing...';
-    refreshBtn.disabled = true;
-
-    // Simulate API call
-    setTimeout(() => {
-        updateLastUpdateTime();
-        filterAndRenderTopics();
-        renderCharts();
-
-        refreshBtn.innerHTML = originalText;
-        refreshBtn.disabled = false;
-
-        showNotification('Data refreshed successfully!', 'success');
-    }, 1500);
-}
-
-// ===================================
-// Utility Functions
-// ===================================
-function formatNumber(num) {
-    if (num >= 1000000) {
-        return (num / 1000000).toFixed(1) + 'M';
-    } else if (num >= 1000) {
-        return (num / 1000).toFixed(1) + 'K';
+async function refreshTrendingData() {
+    const refreshBtn = document.querySelector('.refresh-btn');
+    if (refreshBtn) {
+        refreshBtn.classList.add('spinning');
     }
-    return num.toString();
+
+    const success = await loadTrendingData();
+
+    if (success) {
+        renderTrendingTopics();
+        showNotification('✅ Trending data refreshed!', 'success');
+    } else {
+        showNotification('⚠️ Using cached data', 'warning');
+    }
+
+    if (refreshBtn) {
+        setTimeout(() => refreshBtn.classList.remove('spinning'), 1000);
+    }
 }
 
-function getCategoryGradient(category) {
-    const gradients = {
-        'Technology': 'linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%)',
-        'Entertainment': 'linear-gradient(135deg, #ec4899 0%, #f43f5e 100%)',
-        'Sports': 'linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%)',
-        'Education': 'linear-gradient(135deg, #10b981 0%, #059669 100%)',
-        'Lifestyle': 'linear-gradient(135deg, #f59e0b 0%, #ef4444 100%)',
-    };
-    return gradients[category] || 'linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%)';
-}
-
-function showNotification(message, type = 'success') {
+function showNotification(message, type = 'info') {
     const notification = document.createElement('div');
     notification.className = `notification ${type}`;
+    notification.textContent = message;
     notification.style.cssText = `
         position: fixed;
         top: 100px;
-        right: 24px;
-        background: ${type === 'success' ? '#10b981' : '#f59e0b'};
-        color: white;
+        right: 20px;
         padding: 16px 24px;
+        background: var(--primary);
+        color: white;
         border-radius: 12px;
-        box-shadow: 0 8px 40px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 8px 32px rgba(99, 102, 241, 0.3);
         z-index: 10000;
-        animation: slideInRight 0.3s ease-out;
-        font-weight: 500;
+        animation: slideIn 0.3s ease;
     `;
-    notification.textContent = message;
-
     document.body.appendChild(notification);
 
     setTimeout(() => {
-        notification.style.animation = 'slideOut 0.3s ease-out';
+        notification.style.animation = 'slideOut 0.3s ease';
         setTimeout(() => notification.remove(), 300);
     }, 3000);
 }
 
 // ===================================
-// Auto-refresh every 5 minutes
+// Initialize on Page Load
 // ===================================
-setInterval(() => {
-    updateLastUpdateTime();
-}, 300000); // 5 minutes
+document.addEventListener('DOMContentLoaded', async () => {
+    console.log('🚀 Initializing trending page...');
 
-// ===================================
-// Search Functionality (Optional Enhancement)
-// ===================================
-function searchTopics(query) {
-    const filteredData = trendingTopicsData.filter(topic =>
-        topic.title.toLowerCase().includes(query.toLowerCase()) ||
-        topic.description.toLowerCase().includes(query.toLowerCase()) ||
-        topic.keywords.some(keyword => keyword.toLowerCase().includes(query.toLowerCase()))
-    );
-    renderTrendingList(filteredData);
-}
+    // Load data first
+    await loadTrendingData();
 
-// ===================================
-// Export Data (Optional)
-// ===================================
-function exportTrendingData() {
-    const dataStr = JSON.stringify(trendingTopicsData, null, 2);
-    const dataBlob = new Blob([dataStr], { type: 'application/json' });
-    const url = URL.createObjectURL(dataBlob);
-    const link = document.createElement('a');
-    link.href = url;
-    link.download = `trending-topics-${new Date().toISOString().split('T')[0]}.json`;
-    link.click();
-    URL.revokeObjectURL(url);
-}
+    // Render topics
+    renderTrendingTopics();
 
-console.log('🔥 Trending topics loaded:', trendingTopicsData.length);
+    // Event listeners
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.addEventListener('click', () => filterTopics(btn.dataset.category));
+    });
+
+    document.querySelectorAll('.sort-btn').forEach(btn => {
+        btn.addEventListener('click', () => sortTopics(btn.dataset.sort));
+    });
+
+    const refreshBtn = document.querySelector('.refresh-btn');
+    if (refreshBtn) {
+        refreshBtn.addEventListener('click', refreshTrendingData);
+    }
+
+    // Auto-refresh every 4 hours
+    setInterval(refreshTrendingData, 4 * 60 * 60 * 1000);
+
+    console.log('✅ Trending page initialized!');
+});
+
+// Update timestamp every minute
+setInterval(updateLastUpdateTime, 60000);

@@ -1,0 +1,30 @@
+name: Update Trending Data
+
+on:
+  schedule:
+    # Runs every 4 hours (at minutes 7, 11, 15, 19, 23, 3)
+    - cron: '7 */4 * * *'
+  workflow_dispatch: # Allows manual trigger
+
+jobs:
+  update-trending:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Fetch trending data
+        run: node fetch-trending.js
+
+      - name: Commit and push if changed
+        run: |
+          git config --global user.name 'Trending Bot'
+          git config --global user.email 'bot@codeomax.github.io'
+          git add trending-data.json
+          git diff --quiet && git diff --staged --quiet || (git commit -m "🔥 Auto-update trending data - $(date +'%Y-%m-%d %H:%M')" && git push)
