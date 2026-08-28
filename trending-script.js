@@ -313,7 +313,6 @@ function filterTopics(category) {
     }
 
     applySorting(filteredTopics);
-    updateActiveFilter();
 }
 
 function sortTopics(sortBy) {
@@ -420,16 +419,18 @@ document.addEventListener('DOMContentLoaded', async () => {
     // Render topics
     renderTrendingTopics();
 
-    // Event listeners
-    document.querySelectorAll('.filter-btn').forEach(btn => {
-        btn.addEventListener('click', () => filterTopics(btn.dataset.category));
-    });
+    // Event listeners for dropdowns
+    const categoryFilter = document.getElementById('categoryFilter');
+    if (categoryFilter) {
+        categoryFilter.addEventListener('change', (e) => filterTopics(e.target.value));
+    }
 
-    document.querySelectorAll('.sort-btn').forEach(btn => {
-        btn.addEventListener('click', () => sortTopics(btn.dataset.sort));
-    });
+    const sortBySelect = document.getElementById('sortBy');
+    if (sortBySelect) {
+        sortBySelect.addEventListener('change', (e) => sortTopics(e.target.value));
+    }
 
-    const refreshBtn = document.querySelector('.refresh-btn');
+    const refreshBtn = document.getElementById('refreshBtn');
     if (refreshBtn) {
         refreshBtn.addEventListener('click', refreshTrendingData);
     }
