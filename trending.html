@@ -6,11 +6,306 @@
     <meta name="description" content="Top 10 Trending Topics in India - Latest viral content and popular YouTube topics">
     <title>Trending Topics | YourChannel</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="trending-styles.css">
-    <link rel="stylesheet" href="premium-enhancements.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Inline critical styles to ensure layout works */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #0a0a0f;
+            color: #e4e4e7;
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 24px;
+            width: 100%;
+        }
+
+        .trending-hero {
+            padding: 140px 0 60px;
+            text-align: center;
+        }
+
+        .trending-hero h1 {
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 16px;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #6366f1, #ec4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-description {
+            font-size: 18px;
+            color: #a1a1aa;
+            margin-bottom: 24px;
+        }
+
+        #lastUpdate {
+            color: #6366f1;
+            font-weight: 600;
+        }
+
+        .dashboard-controls {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .control-group {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .control-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        select, button {
+            width: 100%;
+            padding: 12px 16px;
+            background: #18181b;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            color: #e4e4e7;
+            font-family: inherit;
+            font-size: 15px;
+            cursor: pointer;
+        }
+
+        button {
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            border: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+        }
+
+        .trending-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+            gap: 24px;
+            margin-bottom: 60px;
+            width: 100%;
+        }
+
+        .trending-card {
+            background: #18181b;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 24px;
+            transition: all 0.3s ease;
+        }
+
+        .trending-card:hover {
+            transform: translateY(-4px);
+            border-color: #6366f1;
+            box-shadow: 0 12px 40px rgba(99, 102, 241, 0.2);
+        }
+
+        .trending-rank {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+
+        .rank-number {
+            font-size: 36px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #6366f1, #ec4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .trend-badge {
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .trend-badge.hot {
+            background: linear-gradient(135deg, #f43f5e, #ef4444);
+            color: white;
+        }
+
+        .trend-badge.rising {
+            background: linear-gradient(135deg, #f59e0b, #eab308);
+            color: white;
+        }
+
+        .trend-badge.steady {
+            background: rgba(99, 102, 241, 0.2);
+            color: #a78bfa;
+        }
+
+        .trending-icon {
+            font-size: 56px;
+            margin-bottom: 16px;
+        }
+
+        .trending-title {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            line-height: 1.3;
+        }
+
+        .trending-description {
+            font-size: 14px;
+            color: #a1a1aa;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .trending-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .category-tag {
+            padding: 6px 12px;
+            background: rgba(99, 102, 241, 0.2);
+            color: #a78bfa;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .trending-stats {
+            display: flex;
+            gap: 12px;
+            font-size: 13px;
+            color: #a1a1aa;
+        }
+
+        .trending-keywords {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .keyword-tag {
+            padding: 4px 10px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 4px;
+            font-size: 11px;
+            color: #a1a1aa;
+        }
+
+        .chart-section {
+            margin-top: 60px;
+        }
+
+        .section-title {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 32px;
+            text-align: center;
+        }
+
+        .chart-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 24px;
+        }
+
+        .chart-card {
+            background: #18181b;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 24px;
+        }
+
+        .chart-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 24px;
+        }
+
+        .chart-container {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .chart-bar-container {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .chart-label {
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+        }
+
+        .chart-value {
+            font-weight: 600;
+            color: #6366f1;
+        }
+
+        .chart-bar {
+            height: 10px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .chart-bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #6366f1, #8b5cf6);
+            border-radius: 5px;
+            transition: width 0.8s ease;
+        }
+
+        .chart-bar-fill.growth {
+            background: linear-gradient(90deg, #10b981, #059669);
+        }
+
+        @media (max-width: 768px) {
+            .trending-grid {
+                grid-template-columns: 1fr;
+            }
+            .chart-grid {
+                grid-template-columns: 1fr;
+            }
+            .trending-hero h1 {
+                font-size: 32px;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation -->
@@ -21,12 +316,7 @@
                     <span class="logo-icon">▶</span>
                     <span class="logo-text">YourChannel</span>
                 </a>
-                <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-                <ul class="nav-links" id="navLinks">
+                <ul class="nav-links">
                     <li><a href="index.html#home" class="nav-link">Home</a></li>
                     <li><a href="index.html#videos" class="nav-link">Videos</a></li>
                     <li><a href="index.html#about" class="nav-link">About</a></li>
@@ -40,206 +330,77 @@
 
     <!-- Hero Section -->
     <section class="trending-hero">
-        <div class="hero-background">
-            <div class="gradient-orb orb-1"></div>
-            <div class="gradient-orb orb-2"></div>
-        </div>
         <div class="container">
-            <div class="trending-hero-content">
-                <div class="hero-badge">
-                    <span class="badge-dot"></span>
-                    Live Updates
-                </div>
-                <h1 class="hero-title">
-                    🔥 Top 10 <span class="gradient-text">Trending Topics</span> in India
-                </h1>
-                <p class="hero-description">
-                    Stay ahead of the curve with the most popular and viral content topics right now. Updated in real-time.
-                </p>
-                <div class="update-info">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <circle cx="12" cy="12" r="10"></circle>
-                        <polyline points="12 6 12 12 16 14"></polyline>
-                    </svg>
-                    <span>Last updated: <strong id="lastUpdate"></strong></span>
-                </div>
-            </div>
+            <h1>🔥 Top 10 <span class="gradient-text">Trending Topics</span> in India</h1>
+            <p class="hero-description">
+                Stay ahead with the most popular and viral content topics right now. Auto-updates every 4 hours.
+            </p>
+            <p>Last updated: <strong id="lastUpdate">Loading...</strong></p>
         </div>
     </section>
 
     <!-- Trending Dashboard -->
     <section class="trending-dashboard">
         <div class="container">
-            <!-- Filter Controls -->
+            <!-- Controls -->
             <div class="dashboard-controls">
                 <div class="control-group">
                     <label for="categoryFilter">Category</label>
-                    <select id="categoryFilter" class="filter-select">
+                    <select id="categoryFilter">
                         <option value="all">All Categories</option>
                         <option value="entertainment">Entertainment</option>
                         <option value="technology">Technology</option>
                         <option value="sports">Sports</option>
-                        <option value="news">News & Politics</option>
+                        <option value="business">Business</option>
                         <option value="education">Education</option>
-                        <option value="lifestyle">Lifestyle</option>
+                        <option value="health">Health</option>
+                        <option value="food">Food</option>
+                        <option value="travel">Travel</option>
                     </select>
                 </div>
                 <div class="control-group">
                     <label for="sortBy">Sort By</label>
-                    <select id="sortBy" class="filter-select">
+                    <select id="sortBy">
                         <option value="trending">Most Trending</option>
                         <option value="growth">Fastest Growing</option>
                         <option value="videos">Most Videos</option>
                     </select>
                 </div>
-                <button class="btn btn-outline" id="refreshBtn">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <polyline points="23 4 23 10 17 10"></polyline>
-                        <polyline points="1 20 1 14 7 14"></polyline>
-                        <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path>
-                    </svg>
-                    Refresh
-                </button>
-            </div>
-
-            <!-- Stats Overview -->
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <div class="stat-icon" style="background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
-                        </svg>
-                    </div>
-                    <div class="stat-content">
-                        <div class="stat-value" id="totalTopics">10</div>
-                        <div class="stat-label">Trending Topics</div>
-                    </div>
-                    <div class="stat-trend up">
-                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="18 15 12 9 6 15"></polyline>
-                        </svg>
-                        +12%
-                    </div>
-                </div>
-
-                <div class="stat-card">
-                    <div class="stat-icon" style="background: linear-gradient(135deg, #ec4899 0%, #f43f5e 100%);">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                            <circle cx="9" cy="7" r="4"></circle>
-                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                        </svg>
-                    </div>
-                    <div class="stat-content">
-                        <div class="stat-value" id="totalViews">2.5M+</div>
-                        <div class="stat-label">Total Video Views</div>
-                    </div>
-                    <div class="stat-trend up">
-                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="18 15 12 9 6 15"></polyline>
-                        </svg>
-                        +28%
-                    </div>
-                </div>
-
-                <div class="stat-card">
-                    <div class="stat-icon" style="background: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%);">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
-                        </svg>
-                    </div>
-                    <div class="stat-content">
-                        <div class="stat-value" id="hotTopics">3</div>
-                        <div class="stat-label">Hot Topics (>100K)</div>
-                    </div>
-                    <div class="stat-trend up">
-                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="18 15 12 9 6 15"></polyline>
-                        </svg>
-                        +5%
-                    </div>
-                </div>
-
-                <div class="stat-card">
-                    <div class="stat-icon" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
-                        </svg>
-                    </div>
-                    <div class="stat-content">
-                        <div class="stat-value" id="avgGrowth">+45%</div>
-                        <div class="stat-label">Avg Growth Rate</div>
-                    </div>
-                    <div class="stat-trend up">
-                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="18 15 12 9 6 15"></polyline>
-                        </svg>
-                        +8%
-                    </div>
+                <div class="control-group">
+                    <label>&nbsp;</label>
+                    <button id="refreshBtn">
+                        🔄 Refresh Data
+                    </button>
                 </div>
             </div>
 
-            <!-- Trending Topics Grid -->
+            <!-- Trending Grid -->
             <div class="trending-grid" id="trendingGrid">
-                <!-- Dynamically populated -->
+                <p style="text-align:center;padding:60px;color:#a1a1aa;">Loading trending topics...</p>
             </div>
 
-            <!-- Chart Section -->
+            <!-- Charts -->
             <div class="chart-section">
-                <h2 class="section-title">Trending Analysis</h2>
+                <h2 class="section-title">📊 Trending Analysis</h2>
                 <div class="chart-grid">
                     <div class="chart-card">
                         <h3 class="chart-title">Video Volume by Category</h3>
-                        <div class="chart-container" id="categoryChart"></div>
+                        <div class="chart-container" id="categoryChart">
+                            <p style="color:#a1a1aa;text-align:center;">Loading...</p>
+                        </div>
                     </div>
                     <div class="chart-card">
-                        <h3 class="chart-title">Growth Trend (Last 7 Days)</h3>
-                        <div class="chart-container" id="growthChart"></div>
+                        <h3 class="chart-title">Top 5 Growth Trends</h3>
+                        <div class="chart-container" id="growthChart">
+                            <p style="color:#a1a1aa;text-align:center;">Loading...</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <a href="index.html" class="logo">
-                        <span class="logo-icon">▶</span>
-                        <span class="logo-text">YourChannel</span>
-                    </a>
-                    <p class="footer-tagline">Creating content that inspires and educates</p>
-                </div>
-                <div class="footer-links">
-                    <div class="footer-section">
-                        <h4>Quick Links</h4>
-                        <ul>
-                            <li><a href="index.html#home">Home</a></li>
-                            <li><a href="index.html#videos">Videos</a></li>
-                            <li><a href="trending.html">Trending</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-section">
-                        <h4>Connect</h4>
-                        <ul>
-                            <li><a href="index.html#blog">Updates</a></li>
-                            <li><a href="index.html#contact">Contact</a></li>
-                            <li><a href="#">Privacy Policy</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 YourChannel. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
-
     <script src="script.js"></script>
     <script src="trending-script.js"></script>
-    <script src="premium-animations.js"></script>
 </body>
 </html>
