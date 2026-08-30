@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Transform rough commands into professional AI prompts with voice input and grammar correction">
+    <title>AI Prompt Engineer | O-MAX</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0a0e27;
+            --surface: #151b3d;
+            --border: #252d51;
+            --text: #e8eaf0;
+            --text-dim: #9ca3af;
+            --accent: #6366f1;
+            --accent-hover: #5558e3;
+            --accent-glow: rgba(99, 102, 241, 0.2);
+            --success: #10b981;
+            --warning: #f59e0b;
+            --error: #ef4444;
+        }
+
+        :root[data-theme="cutie"] {
+            --bg: #fff5f7;
+            --surface: #ffffff;
+            --border: #ffc0cb;
+            --text: #2d1b2e;
+            --text-dim: #6b4c6f;
+            --accent: #ff69b4;
+            --accent-hover: #ff1493;
+            --accent-glow: rgba(255, 105, 180, 0.2);
+            --success: #ff1493;
+            --warning: #ff6b9d;
+            --error: #ff1493;
+        }
+
+        :root[data-theme="kutee"] {
+            --bg: #1a0033;
+            --surface: #2d0052;
+            --border: #6b00cc;
+            --text: #f0e6ff;
+            --text-dim: #b399cc;
+            --accent: #cc00ff;
+            --accent-hover: #9d00ff;
+            --accent-glow: rgba(204, 0, 255, 0.3);
+            --success: #ff00ff;
+            --warning: #9d00ff;
+            --error: #ff00cc;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .tool-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        .tool-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem 0;
+        }
+
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-dim);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent);
+        }
+
+        .theme-switcher {
+            display: flex;
+            gap: 0.5rem;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 0.5rem;
+        }
+
+        .theme-btn {
+            padding: 0.5rem 1rem;
+            background: transparent;
+            border: none;
+            border-radius: 20px;
+            color: var(--text-dim);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 0.9rem;
+        }
+
+        .theme-btn:hover {
+            background: var(--accent-glow);
+            color: var(--accent);
+        }
+
+        .theme-btn.active {
+            background: var(--accent);
+            color: white;
+        }
+
+        .tool-title {
+            font-size: 3rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--accent), var(--success));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+        }
+
+        .tool-subtitle {
+            color: var(--text-dim);
+            font-size: 1.2rem;
+        }
+
+        .input-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        label {
+            display: block;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            text-transform: uppercase;
+            font-size: 0.875rem;
+            letter-spacing: 1px;
+        }
+
+        .input-wrapper {
+            position: relative;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 1.25rem 4rem 1.25rem 1.25rem;
+            background: var(--bg);
+            border: 2px solid var(--border);
+            border-radius: 12px;
+            color: var(--text);
+            font-size: 1.1rem;
+            font-family: inherit;
+            min-height: 140px;
+            resize: vertical;
+            transition: all 0.2s;
+        }
+
+        textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px var(--accent-glow);
+        }
+
+        .mic-btn {
+            position: absolute;
+            right: 1rem;
+            top: 1rem;
+            width: 3rem;
+            height: 3rem;
+            border: 2px solid var(--border);
+            border-radius: 50%;
+            background: var(--surface);
+            color: var(--text-dim);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            transition: all 0.2s;
+        }
+
+        .mic-btn:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+            transform: scale(1.05);
+        }
+
+        .mic-btn.recording {
+            border-color: var(--error);
+            background: var(--error);
+            color: white;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 var(--error);
+            }
+            50% {
+                transform: scale(1.05);
+                box-shadow: 0 0 0 10px transparent;
+            }
+        }
+
+        .recording-status {
+            display: none;
+            margin-top: 0.75rem;
+            padding: 0.75rem;
+            background: var(--accent-glow);
+            border-radius: 8px;
+            color: var(--error);
+            font-weight: 600;
+        }
+
+        .recording-status.active {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .recording-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--error);
+            border-radius: 50%;
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.2;
+            }
+        }
+
+        .styles {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin: 1.5rem 0;
+        }
+
+        .style-btn {
+            padding: 0.75rem 1.5rem;
+            border: 2px solid var(--border);
+            border-radius: 24px;
+            background: var(--bg);
+            color: var(--text);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .style-btn:hover {
+            border-color: var(--accent);
+        }
+
+        .style-btn.active {
+            border-color: var(--accent);
+            background: var(--accent);
+            color: white;
+        }
+
+        .generate-btn {
+            width: 100%;
+            padding: 1.25rem;
+            background: linear-gradient(135deg, var(--accent), var(--success));
+            border: none;
+            border-radius: 12px;
+            color: white;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.2s;
+        }
+
+        .generate-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px var(--accent-glow);
+        }
+
+        .output {
+            margin-top: 2rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 2rem;
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--border);
+        }
+
+        .card-title {
+            font-weight: 800;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1.5px;
+            color: var(--text-dim);
+        }
+
+        .copy-btn {
+            padding: 0.6rem 1.2rem;
+            background: var(--accent-glow);
+            border: 2px solid var(--accent);
+            border-radius: 8px;
+            color: var(--accent);
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .copy-btn:hover {
+            background: var(--accent);
+            color: white;
+        }
+
+        .copy-btn.copied {
+            background: var(--success);
+            border-color: var(--success);
+            color: white;
+        }
+
+        .prompt-text {
+            line-height: 1.8;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+
+        .improvements {
+            background: var(--surface);
+            border: 2px solid var(--success);
+            border-radius: 16px;
+            padding: 2rem;
+        }
+
+        .improvements-title {
+            font-weight: 800;
+            color: var(--success);
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .improvements ul {
+            list-style: none;
+        }
+
+        .improvements li {
+            padding: 0.5rem 0 0.5rem 2rem;
+            position: relative;
+        }
+
+        .improvements li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--success);
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .toast {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: var(--surface);
+            border: 2px solid;
+            padding: 1rem 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            opacity: 0;
+            transform: translateY(1rem);
+            transition: all 0.3s;
+            z-index: 1000;
+        }
+
+        .toast.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .toast.success {
+            border-color: var(--success);
+            color: var(--success);
+        }
+
+        .toast.error {
+            border-color: var(--error);
+            color: var(--error);
+        }
+
+        @media (max-width: 768px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+
+            .tool-title {
+                font-size: 2rem;
+            }
+
+            .header-top {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation (same as homepage) -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <a href="index.html" class="logo">
+                    <span class="logo-icon">▶</span>
+                    <span class="logo-text">O-MAX</span>
+                </a>
+                <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html#home" class="nav-link">Home</a></li>
+                    <li><a href="index.html#videos" class="nav-link">Videos</a></li>
+                    <li><a href="index.html#about" class="nav-link">About</a></li>
+                    <li><a href="trending.html" class="nav-link">Trending</a></li>
+                    <li><a href="prompt-engineer.html" class="nav-link active">AI Tools</a></li>
+                    <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="tool-container">
+        <header class="tool-header">
+            <div class="header-top">
+                <a href="index.html" class="back-link">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="15 18 9 12 15 6"></polyline>
+                    </svg>
+                    Back to Home
+                </a>
+                <div class="theme-switcher">
+                    <button class="theme-btn active" data-theme="default">Dark</button>
+                    <button class="theme-btn" data-theme="cutie">Cutie</button>
+                    <button class="theme-btn" data-theme="kutee">Kutee</button>
+                </div>
+            </div>
+            <h1 class="tool-title">⚡ AI Prompt Engineer</h1>
+            <p class="tool-subtitle">Transform rough commands into professional AI prompts</p>
+        </header>
+
+        <div class="input-card">
+            <label>Your Command</label>
+            <div class="input-wrapper">
+                <textarea id="input" placeholder="e.g., tool that converts videos to text and summarizes them"></textarea>
+                <button class="mic-btn" id="micBtn">🎤</button>
+            </div>
+            <div class="recording-status" id="recording">
+                <span class="recording-dot"></span>
+                <span>Listening... Click mic to stop</span>
+            </div>
+
+            <label style="margin-top: 2rem;">Style</label>
+            <div class="styles">
+                <button class="style-btn active" data-style="detailed">Detailed</button>
+                <button class="style-btn" data-style="technical">Technical</button>
+                <button class="style-btn" data-style="creative">Creative</button>
+                <button class="style-btn" data-style="concise">Concise</button>
+            </div>
+
+            <button class="generate-btn" id="generate">Generate Professional Prompt</button>
+        </div>
+
+        <div class="output hidden" id="output">
+            <div class="grid">
+                <div class="card">
+                    <div class="card-header">
+                        <span class="card-title">Original</span>
+                        <button class="copy-btn" data-target="original">Copy</button>
+                    </div>
+                    <div class="prompt-text" id="originalText"></div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <span class="card-title">Professional</span>
+                        <button class="copy-btn" data-target="pro">Copy</button>
+                    </div>
+                    <div class="prompt-text" id="proText"></div>
+                </div>
+            </div>
+
+            <div class="improvements">
+                <div class="improvements-title">Improvements Made</div>
+                <ul id="improvementsList"></ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="toast" id="toast">
+        <span id="toastIcon">✓</span>
+        <span id="toastMsg">Copied!</span>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="prompt-engineer-script.js"></script>
+</body>
+</html>
