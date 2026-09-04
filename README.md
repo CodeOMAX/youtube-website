@@ -330,4 +330,4 @@ For issues or questions:
 
 **Built with ❤️ for content creators**
 
-Need help? Feel free to reach out or check online resources for HTML/CSS/JavaScript basics.
+Need help? Feel free to reach out or check online resources for HTML/CSS/JavaScript basics.<!-- Test deployment from Oracle VM -->
