@@ -31,7 +31,6 @@
                     <li><a href="#about" class="nav-link">About</a></li>
                     <li><a href="#blog" class="nav-link">Updates</a></li>
                     <li><a href="trending.html" class="nav-link">Trending</a></li>
-                    <li><a href="setup-guide.html" class="nav-link">Setup Guide</a></li>
                     <li><a href="prompt-engineer.html" class="nav-link">AI Tools</a></li>
                     <li><a href="#contact" class="nav-link">Contact</a></li>
                 </ul>
@@ -122,6 +121,63 @@
             </div>
             <div class="load-more">
                 <button class="btn btn-outline">Load More Videos</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Guide Spotlight -->
+    <section id="guides" class="guide-spotlight">
+        <div class="container">
+            <div class="spotlight-card">
+                <div class="spotlight-glow"></div>
+                <div class="spotlight-body">
+                    <div class="spotlight-badge">
+                        <span class="badge-dot"></span>
+                        Free Guide
+                    </div>
+                    <h2 class="spotlight-title">
+                        Free Claude Setup on a
+                        <span class="gradient-text">Virtual Computer</span>
+                    </h2>
+                    <p class="spotlight-description">
+                        Run Claude on your own always-free cloud machine. A complete, copy-paste walkthrough
+                        covering the virtual computer, Docker, the OmniRoute gateway and the Claude CLI &mdash;
+                        no prior server experience needed.
+                    </p>
+                    <ul class="spotlight-points">
+                        <li>10 guided steps with one-click copy commands</li>
+                        <li>Runs on the always-free tier &mdash; no monthly bill</li>
+                        <li>Troubleshooting and security checklist included</li>
+                    </ul>
+                    <div class="spotlight-actions">
+                        <a href="setup-guide.html" class="btn btn-primary btn-glow">
+                            Read the Guide
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </a>
+                        <span class="spotlight-meta">~30 min setup &middot; Beginner friendly</span>
+                    </div>
+                </div>
+                <div class="spotlight-visual" aria-hidden="true">
+                    <div class="terminal-mock">
+                        <div class="terminal-bar">
+                            <span class="terminal-dot dot-red"></span>
+                            <span class="terminal-dot dot-yellow"></span>
+                            <span class="terminal-dot dot-green"></span>
+                            <span class="terminal-title">ubuntu@your-vm</span>
+                        </div>
+                        <pre class="terminal-body"><span class="term-prompt">$</span> docker run -d --name omniroute \
+    -p 127.0.0.1:20128:20128 omniroute
+<span class="term-ok">✓ container started</span>
+
+<span class="term-prompt">$</span> claude --version
+<span class="term-ok">✓ Claude Code ready</span>
+
+<span class="term-prompt">$</span> claude "hello from my own server"
+<span class="term-cursor">▋</span></pre>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -273,6 +329,14 @@
                             <li><a href="#home">Home</a></li>
                             <li><a href="#videos">Videos</a></li>
                             <li><a href="#about">About</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Resources</h4>
+                        <ul>
+                            <li><a href="setup-guide.html">Free Claude Setup on Virtual Computer</a></li>
+                            <li><a href="trending.html">Trending Topics</a></li>
+                            <li><a href="prompt-engineer.html">AI Tools</a></li>
                         </ul>
                     </div>
                     <div class="footer-section">
