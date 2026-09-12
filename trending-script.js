@@ -31,7 +31,7 @@ const getTrendStatus = (growthRate) => {
 // Load trending data from JSON file
 async function loadTrendingData() {
     try {
-        const response = await fetch('trending-data.json');
+        const response = await fetch('trending-data.json?t=' + Date.now());
         if (!response.ok) {
             throw new Error('Failed to load trending data');
         }
