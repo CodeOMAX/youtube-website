@@ -1,98 +1,96 @@
 {
-  "lastUpdated": "2026-09-28T16:43:32.495Z",
-  "nextUpdate": "2026-09-28T20:43:32.495Z",
+  "lastUpdated": "2026-09-29T00:20:24.984Z",
+  "nextUpdate": "2026-09-29T04:20:24.984Z",
   "topics": [
     {
-      "title": "Protests in Ujjain over demolition of portion of mosque for road-widening project",
-      "description": "Protests in Ujjain over demolition of portion of mosque for road-widening project is among the top trending topics in India right now.",
+      "title": "US H-1B rules get tougher: What layoffs, $100,000 fee and new visa checks mean for Indian tech workers",
+      "description": "US H-1B rules get tougher: What layoffs, $100,000 fee and new visa checks mean for Indian tech workers is among the top trending topics in India right now.",
       "category": "Technology",
-      "videoCount": 44421,
+      "videoCount": 104873,
+      "growthRate": 97,
+      "trending": "hot",
+      "keywords": [
+        "US",
+        "H-1B",
+        "rules",
+        "get",
+        "tougher:",
+        "What"
+      ],
+      "lastUpdated": "2026-09-29T00:20:24.980Z"
+    },
+    {
+      "title": "'His role model has been Sachin Tendulkar': Ajinkya Rahane says Virat Kohli can reach 100 centuries under one condition | Cricket",
+      "description": "'His role model has been Sachin Tendulkar': Ajinkya Rahane says Virat Kohli can reach 100 centuries under one condition | Cricket is among the top trending topics in India right now.",
+      "category": "Sports",
+      "videoCount": 109557,
       "growthRate": 98,
       "trending": "hot",
       "keywords": [
-        "Protests",
-        "in",
-        "Ujjain",
-        "over",
-        "demolition",
-        "of"
+        "'His",
+        "role",
+        "model",
+        "has",
+        "been",
+        "Sachin"
       ],
-      "lastUpdated": "2026-09-28T16:43:32.492Z"
+      "lastUpdated": "2026-09-29T00:20:24.980Z"
     },
     {
-      "title": "Private part cut, grinder found: Mystery over Premanand Maharaj's disciple's death",
-      "description": "Private part cut, grinder found: Mystery over Premanand Maharaj's disciple's death is among the top trending topics in India right now.",
-      "category": "Sports",
-      "videoCount": 58050,
-      "growthRate": 91,
-      "trending": "hot",
-      "keywords": [
-        "Private",
-        "part",
-        "cut,",
-        "grinder",
-        "found:",
-        "Mystery"
-      ],
-      "lastUpdated": "2026-09-28T16:43:32.492Z"
-    },
-    {
-      "title": "Who is Siwet Tomar? Reality TV star draws attention after thrashing Shehzad Poonawalla in Rise & Fall season 2 | India News",
-      "description": "Who is Siwet Tomar? Reality TV star draws attention after thrashing Shehzad Poonawalla in Rise & Fall season 2 | India News is among the top trending topics in India right now.",
-      "category": "Entertainment",
-      "videoCount": 99662,
-      "growthRate": 91,
-      "trending": "hot",
-      "keywords": [
-        "Who",
-        "is",
-        "Siwet",
-        "Tomar?",
-        "Reality",
-        "TV"
-      ],
-      "lastUpdated": "2026-09-28T16:43:32.492Z"
-    },
-    {
-      "title": "Tata Trusts Plan Tata Sons Shake-Up To Sidestep Stock Market Listing",
-      "description": "Tata Trusts Plan Tata Sons Shake-Up To Sidestep Stock Market Listing is among the top trending topics in India right now.",
+      "title": "Stocks fall as higher oil prices, Treasury yields weigh By Reuters",
+      "description": "Stocks fall as higher oil prices, Treasury yields weigh By Reuters is among the top trending topics in India right now.",
       "category": "Business",
-      "videoCount": 140521,
-      "growthRate": 86,
+      "videoCount": 127648,
+      "growthRate": 91,
       "trending": "hot",
       "keywords": [
-        "Tata",
-        "Trusts",
-        "Plan",
-        "Sons",
-        "Shake-Up",
-        "To"
+        "Stocks",
+        "fall",
+        "as",
+        "higher",
+        "oil",
+        "prices,"
       ],
-      "lastUpdated": "2026-09-28T16:43:32.492Z"
+      "lastUpdated": "2026-09-29T00:20:24.980Z"
     },
     {
-      "title": "India's top court rebukes government over timeline for food warning labels",
-      "description": "India's top court rebukes government over timeline for food warning labels is among the top trending topics in India right now.",
+      "title": "Food - ABC News",
+      "description": "Food - ABC News is among the top trending topics in India right now.",
       "category": "Food",
-      "videoCount": 145457,
-      "growthRate": 82,
+      "videoCount": 115332,
+      "growthRate": 88,
       "trending": "hot",
       "keywords": [
-        "India's",
-        "top",
-        "court",
-        "rebukes",
-        "government",
-        "over"
+        "Food",
+        "-",
+        "ABC",
+        "News"
       ],
-      "lastUpdated": "2026-09-28T16:43:32.492Z"
+      "lastUpdated": "2026-09-29T00:20:24.980Z"
+    },
+    {
+      "title": "Hospitals in Visakhapatnam mark World Heart Day with focus on early detection",
+      "description": "Hospitals in Visakhapatnam mark World Heart Day with focus on early detection is among the top trending topics in India right now.",
+      "category": "Health",
+      "videoCount": 149287,
+      "growthRate": 83,
+      "trending": "hot",
+      "keywords": [
+        "Hospitals",
+        "in",
+        "Visakhapatnam",
+        "mark",
+        "World",
+        "Heart"
+      ],
+      "lastUpdated": "2026-09-29T00:20:24.980Z"
     },
     {
       "title": "Office of the Principal District Institute of Education and Trainings Leh.",
       "description": "Office of the Principal District Institute of Education and Trainings Leh. is among the top trending topics in India right now.",
       "category": "Education",
-      "videoCount": 90883,
-      "growthRate": 79,
+      "videoCount": 103418,
+      "growthRate": 80,
       "trending": "hot",
       "keywords": [
         "Office",
@@ -102,14 +100,14 @@
         "District",
         "Institute"
       ],
-      "lastUpdated": "2026-09-28T16:43:32.492Z"
+      "lastUpdated": "2026-09-29T00:20:24.980Z"
     },
     {
       "title": "International flight travel with Qatar and Air India: My experience",
       "description": "International flight travel with Qatar and Air India: My experience is among the top trending topics in India right now.",
       "category": "Travel",
-      "videoCount": 43587,
-      "growthRate": 71,
+      "videoCount": 70586,
+      "growthRate": 78,
       "trending": "hot",
       "keywords": [
         "International",
@@ -119,65 +117,14 @@
         "Qatar",
         "and"
       ],
-      "lastUpdated": "2026-09-28T16:43:32.492Z"
-    },
-    {
-      "title": "JetSynthesys signs MoU with MIXI to collaborate on esports and digital entertainment",
-      "description": "JetSynthesys signs MoU with MIXI to collaborate on esports and digital entertainment is among the top trending topics in India right now.",
-      "category": "Gaming",
-      "videoCount": 117749,
-      "growthRate": 68,
-      "trending": "rising",
-      "keywords": [
-        "JetSynthesys",
-        "signs",
-        "MoU",
-        "with",
-        "MIXI",
-        "to"
-      ],
-      "lastUpdated": "2026-09-28T16:43:32.492Z"
-    },
-    {
-      "title": "How to stream Shakira's Madrid concert, exclusively with Amazon Music",
-      "description": "How to stream Shakira's Madrid concert, exclusively with Amazon Music is among the top trending topics in India right now.",
-      "category": "Music",
-      "videoCount": 43891,
-      "growthRate": 67,
-      "trending": "rising",
-      "keywords": [
-        "How",
-        "to",
-        "stream",
-        "Shakira's",
-        "Madrid",
-        "concert,"
-      ],
-      "lastUpdated": "2026-09-28T16:43:32.492Z"
-    },
-    {
-      "title": "Plea In Supreme Court To Suspend Gyanesh Kumar As CEC, Declare ECI Decisions Cannot Be Taken Unilaterally",
-      "description": "Plea In Supreme Court To Suspend Gyanesh Kumar As CEC, Declare ECI Decisions Cannot Be Taken Unilaterally is among the top trending topics in India right now.",
-      "category": "News",
-      "videoCount": 79290,
-      "growthRate": 65,
-      "trending": "rising",
-      "keywords": [
-        "Plea",
-        "In",
-        "Supreme",
-        "Court",
-        "To",
-        "Suspend"
-      ],
-      "lastUpdated": "2026-09-28T16:43:32.492Z"
+      "lastUpdated": "2026-09-29T00:20:24.980Z"
     },
     {
       "title": "India has 500 million gamers. Why doesn't it have enough global esports champions?",
       "description": "India has 500 million gamers. Why doesn't it have enough global esports champions? is among the top trending topics in India right now.",
       "category": "Gaming",
-      "videoCount": 141005,
-      "growthRate": 62,
+      "videoCount": 67498,
+      "growthRate": 68,
       "trending": "rising",
       "keywords": [
         "India",
@@ -187,14 +134,99 @@
         "gamers.",
         "Why"
       ],
-      "lastUpdated": "2026-09-28T16:43:32.492Z"
+      "lastUpdated": "2026-09-29T00:20:24.980Z"
+    },
+    {
+      "title": "How to stream Shakira's Madrid concert, exclusively with Amazon Music",
+      "description": "How to stream Shakira's Madrid concert, exclusively with Amazon Music is among the top trending topics in India right now.",
+      "category": "Music",
+      "videoCount": 111211,
+      "growthRate": 66,
+      "trending": "rising",
+      "keywords": [
+        "How",
+        "to",
+        "stream",
+        "Shakira's",
+        "Madrid",
+        "concert,"
+      ],
+      "lastUpdated": "2026-09-29T00:20:24.980Z"
+    },
+    {
+      "title": "US, Iran separately talk with mediators in latest bid to end war",
+      "description": "US, Iran separately talk with mediators in latest bid to end war is among the top trending topics in India right now.",
+      "category": "News",
+      "videoCount": 148170,
+      "growthRate": 59,
+      "trending": "rising",
+      "keywords": [
+        "US,",
+        "Iran",
+        "separately",
+        "talk",
+        "with",
+        "mediators"
+      ],
+      "lastUpdated": "2026-09-29T00:20:24.980Z"
+    },
+    {
+      "title": "JetSynthesys signs MoU with MIXI to collaborate on esports and digital entertainment",
+      "description": "JetSynthesys signs MoU with MIXI to collaborate on esports and digital entertainment is among the top trending topics in India right now.",
+      "category": "Gaming",
+      "videoCount": 49745,
+      "growthRate": 62,
+      "trending": "rising",
+      "keywords": [
+        "JetSynthesys",
+        "signs",
+        "MoU",
+        "with",
+        "MIXI",
+        "to"
+      ],
+      "lastUpdated": "2026-09-29T00:20:24.980Z"
+    },
+    {
+      "title": "Cyber fraud money routed via 903 gaming accounts",
+      "description": "Cyber fraud money routed via 903 gaming accounts is among the top trending topics in India right now.",
+      "category": "Gaming",
+      "videoCount": 133520,
+      "growthRate": 53,
+      "trending": "rising",
+      "keywords": [
+        "Cyber",
+        "fraud",
+        "money",
+        "routed",
+        "via",
+        "903"
+      ],
+      "lastUpdated": "2026-09-29T00:20:24.980Z"
+    },
+    {
+      "title": "Gaming granny earns Guinness World Record",
+      "description": "Gaming granny earns Guinness World Record is among the top trending topics in India right now.",
+      "category": "Gaming",
+      "videoCount": 159388,
+      "growthRate": 47,
+      "trending": "steady",
+      "keywords": [
+        "Gaming",
+        "granny",
+        "earns",
+        "Guinness",
+        "World",
+        "Record"
+      ],
+      "lastUpdated": "2026-09-29T00:20:24.980Z"
     },
     {
       "title": "JetSynthesys, MIXI sign MOU to explore game development, publishing and esports in India",
       "description": "JetSynthesys, MIXI sign MOU to explore game development, publishing and esports in India is among the top trending topics in India right now.",
       "category": "Gaming",
-      "videoCount": 139073,
-      "growthRate": 53,
+      "videoCount": 152400,
+      "growthRate": 50,
       "trending": "rising",
       "keywords": [
         "JetSynthesys,",
@@ -204,31 +236,31 @@
         "to",
         "explore"
       ],
-      "lastUpdated": "2026-09-28T16:43:32.492Z"
+      "lastUpdated": "2026-09-29T00:20:24.980Z"
     },
     {
-      "title": "OnePlus 16 to launch on October 12th in China with 185Hz display and 185fps gaming",
-      "description": "OnePlus 16 to launch on October 12th in China with 185Hz display and 185fps gaming is among the top trending topics in India right now.",
+      "title": "Portable Gaming Laptop Market Forecast to 2035: Premium Demand and E-Commerce Expansion Drive Growth",
+      "description": "Portable Gaming Laptop Market Forecast to 2035: Premium Demand and E-Commerce Expansion Drive Growth is among the top trending topics in India right now.",
       "category": "Gaming",
-      "videoCount": 103485,
-      "growthRate": 53,
-      "trending": "rising",
+      "videoCount": 76025,
+      "growthRate": 45,
+      "trending": "steady",
       "keywords": [
-        "OnePlus",
-        "16",
-        "to",
-        "launch",
-        "on",
-        "October"
+        "Portable",
+        "Gaming",
+        "Laptop",
+        "Market",
+        "Forecast",
+        "to"
       ],
-      "lastUpdated": "2026-09-28T16:43:32.492Z"
+      "lastUpdated": "2026-09-29T00:20:24.980Z"
     },
     {
-      "title": "Boyd Gaming stock hits 52-week low at 69.81 USD By Investing.com",
-      "description": "Boyd Gaming stock hits 52-week low at 69.81 USD By Investing.com is among the top trending topics in India right now.",
+      "title": "Boyd Gaming stock hits 52-week low at 69.81 USD",
+      "description": "Boyd Gaming stock hits 52-week low at 69.81 USD is among the top trending topics in India right now.",
       "category": "Gaming",
-      "videoCount": 55644,
-      "growthRate": 43,
+      "videoCount": 58157,
+      "growthRate": 42,
       "trending": "steady",
       "keywords": [
         "Boyd",
@@ -238,31 +270,14 @@
         "52-week",
         "low"
       ],
-      "lastUpdated": "2026-09-28T16:43:32.492Z"
-    },
-    {
-      "title": "JetSynthesys signs MOU with Japan's MIXI for gaming in India",
-      "description": "JetSynthesys signs MOU with Japan's MIXI for gaming in India is among the top trending topics in India right now.",
-      "category": "Gaming",
-      "videoCount": 130216,
-      "growthRate": 42,
-      "trending": "steady",
-      "keywords": [
-        "JetSynthesys",
-        "signs",
-        "MOU",
-        "with",
-        "Japan's",
-        "MIXI"
-      ],
-      "lastUpdated": "2026-09-28T16:43:32.492Z"
+      "lastUpdated": "2026-09-29T00:20:24.980Z"
     },
     {
       "title": "India Gaming and E-Sports market to reach $2.6 billion by 2030",
       "description": "India Gaming and E-Sports market to reach $2.6 billion by 2030 is among the top trending topics in India right now.",
       "category": "Gaming",
-      "videoCount": 149254,
-      "growthRate": 41,
+      "videoCount": 68529,
+      "growthRate": 37,
       "trending": "steady",
       "keywords": [
         "India",
@@ -272,41 +287,24 @@
         "market",
         "to"
       ],
-      "lastUpdated": "2026-09-28T16:43:32.492Z"
+      "lastUpdated": "2026-09-29T00:20:24.980Z"
     },
     {
-      "title": "OnePlus 16 launch date confirmed for October 12 with 185Hz gaming support",
-      "description": "OnePlus 16 launch date confirmed for October 12 with 185Hz gaming support is among the top trending topics in India right now.",
+      "title": "'Gaming pays me double what I earned as a teacher'",
+      "description": "'Gaming pays me double what I earned as a teacher' is among the top trending topics in India right now.",
       "category": "Gaming",
-      "videoCount": 52322,
+      "videoCount": 94027,
       "growthRate": 35,
       "trending": "steady",
       "keywords": [
-        "OnePlus",
-        "16",
-        "launch",
-        "date",
-        "confirmed",
-        "for"
+        "'Gaming",
+        "pays",
+        "me",
+        "double",
+        "what",
+        "I"
       ],
-      "lastUpdated": "2026-09-28T16:43:32.492Z"
-    },
-    {
-      "title": "JetSynthesys and MIXI sign MoU to explore gaming opportunities in India",
-      "description": "JetSynthesys and MIXI sign MoU to explore gaming opportunities in India is among the top trending topics in India right now.",
-      "category": "Gaming",
-      "videoCount": 40318,
-      "growthRate": 35,
-      "trending": "steady",
-      "keywords": [
-        "JetSynthesys",
-        "and",
-        "MIXI",
-        "sign",
-        "MoU",
-        "to"
-      ],
-      "lastUpdated": "2026-09-28T16:43:32.492Z"
+      "lastUpdated": "2026-09-29T00:20:24.980Z"
     }
   ],
   "metadata": {
