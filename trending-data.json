@@ -1,70 +1,152 @@
 {
-  "lastUpdated": "2026-10-01T15:24:47.968Z",
-  "nextUpdate": "2026-10-01T19:24:47.968Z",
+  "lastUpdated": "2026-10-01T20:59:48.603Z",
+  "nextUpdate": "2026-10-02T00:59:48.603Z",
   "topics": [
     {
-      "title": "Honda elevate facelift pre bookings",
-      "description": "Honda elevate facelift pre bookings is among the top trending topics in India right now.",
+      "title": "Samsung galaxy s26 ultra",
+      "description": "Samsung galaxy s26 ultra is among the top trending topics in India right now.",
       "category": "Technology",
-      "videoCount": 97220,
+      "videoCount": 131014,
       "growthRate": 98,
       "trending": "hot",
       "keywords": [
-        "Honda",
-        "elevate",
-        "facelift",
-        "pre",
-        "bookings",
+        "Samsung",
+        "galaxy",
+        "s26",
+        "ultra",
         "Technology"
       ],
-      "lastUpdated": "2026-10-01T15:24:47.967Z"
+      "lastUpdated": "2026-10-01T20:59:48.601Z"
     },
     {
-      "title": "Lottery sambad",
-      "description": "Lottery sambad is among the top trending topics in India right now.",
-      "category": "Entertainment",
-      "videoCount": 84659,
-      "growthRate": 93,
+      "title": "Portugal national football team",
+      "description": "Portugal national football team is among the top trending topics in India right now.",
+      "category": "Sports",
+      "videoCount": 154942,
+      "growthRate": 97,
       "trending": "hot",
       "keywords": [
-        "Lottery",
-        "sambad",
+        "Portugal",
+        "national",
+        "football",
+        "team",
+        "Sports"
+      ],
+      "lastUpdated": "2026-10-01T20:59:48.601Z"
+    },
+    {
+      "title": "Friday ott releases",
+      "description": "Friday ott releases is among the top trending topics in India right now.",
+      "category": "Entertainment",
+      "videoCount": 135298,
+      "growthRate": 94,
+      "trending": "hot",
+      "keywords": [
+        "Friday",
+        "ott",
+        "releases",
         "Entertainment"
       ],
-      "lastUpdated": "2026-10-01T15:24:47.967Z"
+      "lastUpdated": "2026-10-01T20:59:48.601Z"
     },
     {
-      "title": "Accenture share price",
-      "description": "Accenture share price is among the top trending topics in India right now.",
-      "category": "Business",
-      "videoCount": 64096,
-      "growthRate": 88,
+      "title": "Da hike central government employees",
+      "description": "Da hike central government employees is among the top trending topics in India right now.",
+      "category": "News",
+      "videoCount": 124366,
+      "growthRate": 89,
       "trending": "hot",
       "keywords": [
-        "Accenture",
-        "share",
-        "price",
-        "Business"
+        "Da",
+        "hike",
+        "central",
+        "government",
+        "employees",
+        "News"
       ],
-      "lastUpdated": "2026-10-01T15:24:47.967Z"
+      "lastUpdated": "2026-10-01T20:59:48.601Z"
     },
     {
-      "title": "Anup bagchi",
-      "description": "Anup bagchi is among the top trending topics in India right now.",
+      "title": "Jennifer lopez",
+      "description": "Jennifer lopez is among the top trending topics in India right now.",
       "category": "News",
-      "videoCount": 159753,
-      "growthRate": 86,
+      "videoCount": 57353,
+      "growthRate": 80,
+      "trending": "hot",
+      "keywords": [
+        "Jennifer",
+        "lopez",
+        "News"
+      ],
+      "lastUpdated": "2026-10-01T20:59:48.601Z"
+    },
+    {
+      "title": "Anup bagchi hdfc bank ceo",
+      "description": "Anup bagchi hdfc bank ceo is among the top trending topics in India right now.",
+      "category": "News",
+      "videoCount": 146585,
+      "growthRate": 78,
       "trending": "hot",
       "keywords": [
         "Anup",
         "bagchi",
+        "hdfc",
+        "bank",
+        "ceo",
         "News"
       ],
-      "lastUpdated": "2026-10-01T15:24:47.967Z"
+      "lastUpdated": "2026-10-01T20:59:48.601Z"
+    },
+    {
+      "title": "Man city vs real madrid",
+      "description": "Man city vs real madrid is among the top trending topics in India right now.",
+      "category": "News",
+      "videoCount": 73217,
+      "growthRate": 73,
+      "trending": "hot",
+      "keywords": [
+        "Man",
+        "city",
+        "vs",
+        "real",
+        "madrid",
+        "News"
+      ],
+      "lastUpdated": "2026-10-01T20:59:48.601Z"
+    },
+    {
+      "title": "Ireland vs austria",
+      "description": "Ireland vs austria is among the top trending topics in India right now.",
+      "category": "News",
+      "videoCount": 97393,
+      "growthRate": 67,
+      "trending": "rising",
+      "keywords": [
+        "Ireland",
+        "vs",
+        "austria",
+        "News"
+      ],
+      "lastUpdated": "2026-10-01T20:59:48.601Z"
+    },
+    {
+      "title": "Greece vs netherlands",
+      "description": "Greece vs netherlands is among the top trending topics in India right now.",
+      "category": "News",
+      "videoCount": 100625,
+      "growthRate": 66,
+      "trending": "rising",
+      "keywords": [
+        "Greece",
+        "vs",
+        "netherlands",
+        "News"
+      ],
+      "lastUpdated": "2026-10-01T20:59:48.601Z"
     }
   ],
   "metadata": {
-    "totalTopics": 4,
+    "totalTopics": 9,
     "country": "India",
     "updateFrequency": "Every 4 hours",
     "source": "Google News India RSS (general + per-category) + Google Trends (geo=IN) — real English trends, every category, with simulated fallback"
