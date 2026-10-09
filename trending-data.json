@@ -1,183 +1,132 @@
 {
-  "lastUpdated": "2026-10-08T21:16:09.337Z",
-  "nextUpdate": "2026-10-09T01:16:09.337Z",
+  "lastUpdated": "2026-10-09T06:01:14.041Z",
+  "nextUpdate": "2026-10-09T10:01:14.041Z",
   "topics": [
     {
-      "title": "Watch: Rat found swimming in gulab jamun container at Bhiwandi sweet shop; FDA orders closure",
-      "description": "Watch: Rat found swimming in gulab jamun container at Bhiwandi sweet shop; FDA orders closure is among the top trending topics in India right now.",
+      "title": "GST Council proposes 5% levy on e-commerce delivery services, with no input tax credit",
+      "description": "GST Council proposes 5% levy on e-commerce delivery services, with no input tax credit is among the top trending topics in India right now.",
       "category": "Technology",
-      "videoCount": 56193,
-      "growthRate": 98,
+      "videoCount": 87834,
+      "growthRate": 95,
       "trending": "hot",
-      "keywords": [
-        "Watch:",
-        "Rat",
-        "found",
-        "swimming",
-        "in",
-        "gulab"
-      ],
-      "lastUpdated": "2026-10-08T21:16:09.334Z"
-    },
-    {
-      "title": "World Test Championship final rematch could shape next year's decider",
-      "description": "World Test Championship final rematch could shape next year's decider is among the top trending topics in India right now.",
-      "category": "Sports",
-      "videoCount": 139855,
-      "growthRate": 98,
-      "trending": "hot",
-      "keywords": [
-        "World",
-        "Test",
-        "Championship",
-        "final",
-        "rematch",
-        "could"
-      ],
-      "lastUpdated": "2026-10-08T21:16:09.334Z"
-    },
-    {
-      "title": "Karunya plus kerala lottery results",
-      "description": "Karunya plus kerala lottery results is among the top trending topics in India right now.",
-      "category": "Entertainment",
-      "videoCount": 111704,
-      "growthRate": 91,
-      "trending": "hot",
-      "keywords": [
-        "Karunya",
-        "plus",
-        "kerala",
-        "lottery",
-        "results",
-        "Entertainment"
-      ],
-      "lastUpdated": "2026-10-08T21:16:09.334Z"
-    },
-    {
-      "title": "India's Sensex slumps to 32-month low on oil surge, foreign exodus",
-      "description": "India's Sensex slumps to 32-month low on oil surge, foreign exodus is among the top trending topics in India right now.",
-      "category": "Business",
-      "videoCount": 74038,
-      "growthRate": 85,
-      "trending": "hot",
-      "keywords": [
-        "India's",
-        "Sensex",
-        "slumps",
-        "to",
-        "32-month",
-        "low"
-      ],
-      "lastUpdated": "2026-10-08T21:16:09.334Z"
-    },
-    {
-      "title": "FSSAI flags GLP-1 food claims, cracks down on rotten food, pesticide-tainted raisins",
-      "description": "FSSAI flags GLP-1 food claims, cracks down on rotten food, pesticide-tainted raisins is among the top trending topics in India right now.",
-      "category": "Food",
-      "videoCount": 59409,
-      "growthRate": 83,
-      "trending": "hot",
-      "keywords": [
-        "FSSAI",
-        "flags",
-        "GLP-1",
-        "food",
-        "claims,",
-        "cracks"
-      ],
-      "lastUpdated": "2026-10-08T21:16:09.334Z"
-    },
-    {
-      "title": "NAGALAND BRINGS EDUCATION PARTNERS TOGETHER TO BUILD A SINGLE SOURCE OF TRUTH FOR SCHOOL DATA",
-      "description": "NAGALAND BRINGS EDUCATION PARTNERS TOGETHER TO BUILD A SINGLE SOURCE OF TRUTH FOR SCHOOL DATA is among the top trending topics in India right now.",
-      "category": "Education",
-      "videoCount": 102332,
-      "growthRate": 76,
-      "trending": "hot",
-      "keywords": [
-        "NAGALAND",
-        "BRINGS",
-        "EDUCATION",
-        "PARTNERS",
-        "TOGETHER",
-        "TO"
-      ],
-      "lastUpdated": "2026-10-08T21:16:09.334Z"
-    },
-    {
-      "title": "Air India Delhi-Riyadh flight returns after Houthi attack on Saudi airport; flights ops suspended till Oc",
-      "description": "Air India Delhi-Riyadh flight returns after Houthi attack on Saudi airport; flights ops suspended till Oc is among the top trending topics in India right now.",
-      "category": "Travel",
-      "videoCount": 147627,
-      "growthRate": 75,
-      "trending": "hot",
-      "keywords": [
-        "Air",
-        "India",
-        "Delhi-Riyadh",
-        "flight",
-        "returns",
-        "after"
-      ],
-      "lastUpdated": "2026-10-08T21:16:09.334Z"
-    },
-    {
-      "title": "GIGABYTE expands its portfolio of Made in India gaming monitors",
-      "description": "GIGABYTE expands its portfolio of Made in India gaming monitors is among the top trending topics in India right now.",
-      "category": "Gaming",
-      "videoCount": 100021,
-      "growthRate": 72,
-      "trending": "hot",
-      "keywords": [
-        "GIGABYTE",
-        "expands",
-        "its",
-        "portfolio",
-        "of",
-        "Made"
-      ],
-      "lastUpdated": "2026-10-08T21:16:09.334Z"
-    },
-    {
-      "title": "The Breakout Music Video of the Year Has a Message for Men. What Is It?",
-      "description": "The Breakout Music Video of the Year Has a Message for Men. What Is It? is among the top trending topics in India right now.",
-      "category": "Music",
-      "videoCount": 51065,
-      "growthRate": 63,
-      "trending": "rising",
-      "keywords": [
-        "The",
-        "Breakout",
-        "Music",
-        "Video",
-        "of",
-        "the"
-      ],
-      "lastUpdated": "2026-10-08T21:16:09.334Z"
-    },
-    {
-      "title": "GST Council meet highlights: GST Council reforms to kick in from April 2027",
-      "description": "GST Council meet highlights: GST Council reforms to kick in from April 2027 is among the top trending topics in India right now.",
-      "category": "News",
-      "videoCount": 96929,
-      "growthRate": 61,
-      "trending": "rising",
       "keywords": [
         "GST",
         "Council",
-        "meet",
-        "highlights:",
-        "reforms",
-        "to"
+        "proposes",
+        "5%",
+        "levy",
+        "on"
       ],
-      "lastUpdated": "2026-10-08T21:16:09.334Z"
+      "lastUpdated": "2026-10-09T06:01:14.038Z"
+    },
+    {
+      "title": "Anaganaga review: A contemporary take on Telugu food in Hyderabad",
+      "description": "Anaganaga review: A contemporary take on Telugu food in Hyderabad is among the top trending topics in India right now.",
+      "category": "Food",
+      "videoCount": 81024,
+      "growthRate": 97,
+      "trending": "hot",
+      "keywords": [
+        "Anaganaga",
+        "review:",
+        "A",
+        "contemporary",
+        "take",
+        "on"
+      ],
+      "lastUpdated": "2026-10-09T06:01:14.038Z"
+    },
+    {
+      "title": "Priscilla Chan founded a school, 10 years later, Board voted to close it; shutdown shows what philanthrop",
+      "description": "Priscilla Chan founded a school, 10 years later, Board voted to close it; shutdown shows what philanthrop is among the top trending topics in India right now.",
+      "category": "Education",
+      "videoCount": 98829,
+      "growthRate": 89,
+      "trending": "hot",
+      "keywords": [
+        "Priscilla",
+        "Chan",
+        "founded",
+        "a",
+        "school,",
+        "10"
+      ],
+      "lastUpdated": "2026-10-09T06:01:14.038Z"
+    },
+    {
+      "title": "Professor Francesco Frangialli Receives WTTC Icon Award for Elevating Tourism to the United Nations Stage",
+      "description": "Professor Francesco Frangialli Receives WTTC Icon Award for Elevating Tourism to the United Nations Stage is among the top trending topics in India right now.",
+      "category": "Travel",
+      "videoCount": 51021,
+      "growthRate": 86,
+      "trending": "hot",
+      "keywords": [
+        "Professor",
+        "Francesco",
+        "Frangialli",
+        "Receives",
+        "WTTC",
+        "Icon"
+      ],
+      "lastUpdated": "2026-10-09T06:01:14.038Z"
+    },
+    {
+      "title": "Gaming ad growth hits 12% after RMG ban; festive spends seen up 30%",
+      "description": "Gaming ad growth hits 12% after RMG ban; festive spends seen up 30% is among the top trending topics in India right now.",
+      "category": "Gaming",
+      "videoCount": 84461,
+      "growthRate": 81,
+      "trending": "hot",
+      "keywords": [
+        "Gaming",
+        "ad",
+        "growth",
+        "hits",
+        "12%",
+        "after"
+      ],
+      "lastUpdated": "2026-10-09T06:01:14.038Z"
+    },
+    {
+      "title": "Singer Mahalakshmi Iyer reflects on music's evolution; sees exciting times ahead as indie genres gain gro",
+      "description": "Singer Mahalakshmi Iyer reflects on music's evolution; sees exciting times ahead as indie genres gain gro is among the top trending topics in India right now.",
+      "category": "Music",
+      "videoCount": 138932,
+      "growthRate": 82,
+      "trending": "hot",
+      "keywords": [
+        "Singer",
+        "Mahalakshmi",
+        "Iyer",
+        "reflects",
+        "on",
+        "music's"
+      ],
+      "lastUpdated": "2026-10-09T06:01:14.038Z"
+    },
+    {
+      "title": "Saudi-led coalition says it intercepts three Houthi ballistic missiles",
+      "description": "Saudi-led coalition says it intercepts three Houthi ballistic missiles is among the top trending topics in India right now.",
+      "category": "News",
+      "videoCount": 102629,
+      "growthRate": 76,
+      "trending": "hot",
+      "keywords": [
+        "Saudi-led",
+        "coalition",
+        "says",
+        "it",
+        "intercepts",
+        "three"
+      ],
+      "lastUpdated": "2026-10-09T06:01:14.038Z"
     },
     {
       "title": "PUBG: BATTLEGROUNDS Weekly Bans Notice (09/28~10/04)",
       "description": "PUBG: BATTLEGROUNDS Weekly Bans Notice (09/28~10/04) is among the top trending topics in India right now.",
       "category": "Gaming",
-      "videoCount": 117425,
-      "growthRate": 56,
+      "videoCount": 48150,
+      "growthRate": 69,
       "trending": "rising",
       "keywords": [
         "PUBG:",
@@ -187,15 +136,100 @@
         "Notice",
         "(09/28~10/04)"
       ],
-      "lastUpdated": "2026-10-08T21:16:09.334Z"
+      "lastUpdated": "2026-10-09T06:01:14.038Z"
+    },
+    {
+      "title": "IQOO 16R could be headed to India with flagship Snapdragon chipset, gaming-focused tablet also in the works",
+      "description": "IQOO 16R could be headed to India with flagship Snapdragon chipset, gaming-focused tablet also in the works is among the top trending topics in India right now.",
+      "category": "Gaming",
+      "videoCount": 143982,
+      "growthRate": 68,
+      "trending": "rising",
+      "keywords": [
+        "IQOO",
+        "16R",
+        "could",
+        "be",
+        "headed",
+        "to"
+      ],
+      "lastUpdated": "2026-10-09T06:01:14.038Z"
+    },
+    {
+      "title": "The Final Road to PGC, PGS Circuit 4",
+      "description": "The Final Road to PGC, PGS Circuit 4 is among the top trending topics in India right now.",
+      "category": "Gaming",
+      "videoCount": 126924,
+      "growthRate": 63,
+      "trending": "rising",
+      "keywords": [
+        "The",
+        "Final",
+        "Road",
+        "to",
+        "PGC,",
+        "PGS"
+      ],
+      "lastUpdated": "2026-10-09T06:01:14.038Z"
+    },
+    {
+      "title": "Las Vegas Sands to expand non-gaming offerings in Macau, CEO tells BloombergTV",
+      "description": "Las Vegas Sands to expand non-gaming offerings in Macau, CEO tells BloombergTV is among the top trending topics in India right now.",
+      "category": "Gaming",
+      "videoCount": 154417,
+      "growthRate": 61,
+      "trending": "rising",
+      "keywords": [
+        "Las",
+        "Vegas",
+        "Sands",
+        "to",
+        "expand",
+        "non-gaming"
+      ],
+      "lastUpdated": "2026-10-09T06:01:14.038Z"
+    },
+    {
+      "title": "Online sports gaming takes root in the UAE after successful Fifa World Cup",
+      "description": "Online sports gaming takes root in the UAE after successful Fifa World Cup is among the top trending topics in India right now.",
+      "category": "Gaming",
+      "videoCount": 40336,
+      "growthRate": 55,
+      "trending": "rising",
+      "keywords": [
+        "Online",
+        "sports",
+        "gaming",
+        "takes",
+        "root",
+        "in"
+      ],
+      "lastUpdated": "2026-10-09T06:01:14.038Z"
+    },
+    {
+      "title": "Rapid 500Hz QD-OLED gaming monitor plunges to a competitive price on Amazon",
+      "description": "Rapid 500Hz QD-OLED gaming monitor plunges to a competitive price on Amazon is among the top trending topics in India right now.",
+      "category": "Gaming",
+      "videoCount": 137722,
+      "growthRate": 51,
+      "trending": "rising",
+      "keywords": [
+        "Rapid",
+        "500Hz",
+        "QD-OLED",
+        "gaming",
+        "monitor",
+        "plunges"
+      ],
+      "lastUpdated": "2026-10-09T06:01:14.038Z"
     },
     {
       "title": "Italy probes gaming giant Activision Blizzard over in-game spending by children",
       "description": "Italy probes gaming giant Activision Blizzard over in-game spending by children is among the top trending topics in India right now.",
       "category": "Gaming",
-      "videoCount": 66293,
-      "growthRate": 53,
-      "trending": "rising",
+      "videoCount": 94248,
+      "growthRate": 45,
+      "trending": "steady",
       "keywords": [
         "Italy",
         "probes",
@@ -204,31 +238,31 @@
         "Activision",
         "Blizzard"
       ],
-      "lastUpdated": "2026-10-08T21:16:09.334Z"
+      "lastUpdated": "2026-10-09T06:01:14.038Z"
     },
     {
-      "title": "Win big at Play Fest: Epic prizes, gaming leagues, and daily deals start October 13",
-      "description": "Win big at Play Fest: Epic prizes, gaming leagues, and daily deals start October 13 is among the top trending topics in India right now.",
+      "title": "Now.gg Free Cloud Gaming Setup: 13 Steps, $0.99 Pass [2026]",
+      "description": "Now.gg Free Cloud Gaming Setup: 13 Steps, $0.99 Pass [2026] is among the top trending topics in India right now.",
       "category": "Gaming",
-      "videoCount": 90592,
-      "growthRate": 50,
-      "trending": "rising",
+      "videoCount": 155733,
+      "growthRate": 43,
+      "trending": "steady",
       "keywords": [
-        "Win",
-        "big",
-        "at",
-        "Play",
-        "Fest:",
-        "Epic"
+        "Now.gg",
+        "Free",
+        "Cloud",
+        "Gaming",
+        "Setup:",
+        "13"
       ],
-      "lastUpdated": "2026-10-08T21:16:09.334Z"
+      "lastUpdated": "2026-10-09T06:01:14.038Z"
     },
     {
       "title": "Xbox Wants To Be More Than A Gaming Company, And Its New XP Division Explains Why",
       "description": "Xbox Wants To Be More Than A Gaming Company, And Its New XP Division Explains Why is among the top trending topics in India right now.",
       "category": "Gaming",
-      "videoCount": 117619,
-      "growthRate": 48,
+      "videoCount": 55035,
+      "growthRate": 41,
       "trending": "steady",
       "keywords": [
         "Xbox",
@@ -238,14 +272,31 @@
         "More",
         "Than"
       ],
-      "lastUpdated": "2026-10-08T21:16:09.334Z"
+      "lastUpdated": "2026-10-09T06:01:14.038Z"
+    },
+    {
+      "title": "OnMobile Partners With Poorvika To Expand ONMO+",
+      "description": "OnMobile Partners With Poorvika To Expand ONMO+ is among the top trending topics in India right now.",
+      "category": "Gaming",
+      "videoCount": 116718,
+      "growthRate": 35,
+      "trending": "steady",
+      "keywords": [
+        "OnMobile",
+        "Partners",
+        "With",
+        "Poorvika",
+        "To",
+        "Expand"
+      ],
+      "lastUpdated": "2026-10-09T06:01:14.038Z"
     },
     {
       "title": "Kuwait To Host First Asian Esports And Mind Sports Games In 2027",
       "description": "Kuwait To Host First Asian Esports And Mind Sports Games In 2027 is among the top trending topics in India right now.",
       "category": "Gaming",
-      "videoCount": 78209,
-      "growthRate": 46,
+      "videoCount": 151403,
+      "growthRate": 35,
       "trending": "steady",
       "keywords": [
         "Kuwait",
@@ -255,58 +306,7 @@
         "Asian",
         "Esports"
       ],
-      "lastUpdated": "2026-10-08T21:16:09.334Z"
-    },
-    {
-      "title": "I priced out my 2023 gaming PC at today's prices, and it's worth more than I paid for it",
-      "description": "I priced out my 2023 gaming PC at today's prices, and it's worth more than I paid for it is among the top trending topics in India right now.",
-      "category": "Gaming",
-      "videoCount": 86874,
-      "growthRate": 38,
-      "trending": "steady",
-      "keywords": [
-        "I",
-        "priced",
-        "out",
-        "my",
-        "2023",
-        "gaming"
-      ],
-      "lastUpdated": "2026-10-08T21:16:09.334Z"
-    },
-    {
-      "title": "Karnataka: 13-yr-old boy dies by suicide after losing Rs 4.11 lakh to gaming extortion",
-      "description": "Karnataka: 13-yr-old boy dies by suicide after losing Rs 4.11 lakh to gaming extortion is among the top trending topics in India right now.",
-      "category": "Gaming",
-      "videoCount": 137163,
-      "growthRate": 38,
-      "trending": "steady",
-      "keywords": [
-        "Karnataka:",
-        "13-yr-old",
-        "boy",
-        "dies",
-        "by",
-        "suicide"
-      ],
-      "lastUpdated": "2026-10-08T21:16:09.334Z"
-    },
-    {
-      "title": "Best 120Hz gaming TV deals for during Amazon Great Indian Festival 2026",
-      "description": "Best 120Hz gaming TV deals for during Amazon Great Indian Festival 2026 is among the top trending topics in India right now.",
-      "category": "Gaming",
-      "videoCount": 112216,
-      "growthRate": 35,
-      "trending": "steady",
-      "keywords": [
-        "Best",
-        "120Hz",
-        "gaming",
-        "TV",
-        "deals",
-        "for"
-      ],
-      "lastUpdated": "2026-10-08T21:16:09.334Z"
+      "lastUpdated": "2026-10-09T06:01:14.038Z"
     }
   ],
   "metadata": {
